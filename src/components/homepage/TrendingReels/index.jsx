@@ -98,7 +98,7 @@ const TrendingReels = () => {
                                         height={32}
                                     />
                                 </div>
-                                <div className="reel-views-indicator"><Image src={EYE_ICON.src} alt="Views" height={16} width={16} className="pe-2" /><span className="text-white text-sm">20k</span></div>
+                                                                    <div className="reel-views-indicator"><Image src={EYE_ICON.src} alt="Views" height={16} width={16} className="pe-2" /><span className="text-white text-sm">20k</span></div>
                             </div>
                             <h4 className="reel-title">Strenger Things</h4>
                         </div>

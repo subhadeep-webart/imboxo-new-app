@@ -55,7 +55,6 @@ const CapturedSection = () => {
                         </SwiperSlide>
                     </Swiper>
                 </div>
-
             </div>
 
 
