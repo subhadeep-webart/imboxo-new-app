@@ -1,0 +1,43 @@
+.auth_page_wrapper {
+    height: 100vh;
+    background-image: url('/assets/images/authpage-background.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .auth_page_form_wrapper {
+        width: 100%;
+        max-width: 933px;
+        margin-inline: auto;
+        background: linear-gradient(110.27deg, #FFFFFF -1.19%, #242424 88.94%);
+        border: 1.8px;
+        border-radius: 16px;
+        padding: 1.5px;
+    }
+
+    // .border_gradient {
+    //     background: linear-gradient(110.27deg, #FFFFFF -1.19%, #242424 88.94%);
+    //     border: 1.8px;
+    //     border-radius: 16px;
+    // }
+
+    .form_background {
+        box-shadow: 0px 4px 106.8px 0px #7F46F233 inset;
+        background-color: black;
+        border-radius: 16px;
+    }
+
+    .form_slider {
+        width: 100%;
+        max-width: 424px;
+        padding: 14px;
+    }
+
+    .form_wrapper{
+        width: 100%;
+    }
+    .form_container{
+        background-color: #000000;
+    }
+}
