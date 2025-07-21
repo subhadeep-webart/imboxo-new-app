@@ -17,7 +17,7 @@ const CapturedSection = () => {
                 <div className="full_screen_caraousel">
                     <Swiper
                         modules={[Autoplay]}
-                        spaceBetween={30}
+                        spaceBetween={15}
                         slidesPerView={"auto"}
                         loop={true}
                         autoplay={{ delay: 2000, disableOnInteraction: true,pauseOnMouseEnter: true }}
