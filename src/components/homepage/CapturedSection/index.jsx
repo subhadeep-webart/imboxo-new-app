@@ -20,7 +20,7 @@ const CapturedSection = () => {
                         spaceBetween={30}
                         slidesPerView={"auto"}
                         loop={true}
-                        autoplay={{ delay: 2000, disableOnInteraction: false }}
+                        autoplay={{ delay: 2000, disableOnInteraction: true,pauseOnMouseEnter: true }}
                         className="logo-wrapper"
                     >
                         <SwiperSlide className="logo-list">

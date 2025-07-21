@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TopRankMovieCard from "./TopRankMovieCard";
 
 const TopRankMovieList = ({movieListData}) => {

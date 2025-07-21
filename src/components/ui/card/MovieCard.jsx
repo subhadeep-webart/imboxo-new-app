@@ -1,11 +1,11 @@
 import Image from "next/image";
-const MovieCard = ({movieData}) => {
-    console.log("Movie Data======================>lifeUi",movieData);
-    const {name,duration,release_date,thumbnail}=movieData || {};
+const MovieCard = ({ movieData }) => {
+    console.log("Movie Data======================>lifeUi", movieData);
+    const { name, duration, release_date, thumbnail } = movieData || {};
     return (
-        <div className="each-movie">
+        <>
             <div className="movie-image">
-                <Image src={thumbnail} alt={`${name}-image`} fill className="rounded-2xl"/>
+                <Image src={thumbnail} alt={`${name}-image`} fill className="rounded-2xl" />
             </div>
             <div className="movie-info">
                 <div className="movie-details">
@@ -33,7 +33,7 @@ const MovieCard = ({movieData}) => {
                     />
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

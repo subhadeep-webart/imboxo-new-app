@@ -76,9 +76,9 @@ const TopMoviesOfWeek = ({ topMoviesOfWeekData }) => {
                 <div className="wrapper">
                     <div className="banner-content">
                         {
-                            genreList.length > 0 && <MovieGenreList genreList={genreList} />
+                            genreList.length > 0 && <MovieGenreList genreList={genreList.slice(0,4)} />
                         }
-                        <h1 className="banner-title">{name}</h1>
+                        <h1 className="banner-title line-clamp-1">{name}</h1>
                         <div className="content-info">
                             <ul className="stars-wrapper">
                                 <li className="each-star">
@@ -127,7 +127,7 @@ const TopMoviesOfWeek = ({ topMoviesOfWeekData }) => {
                         </div>
                         <p className="description">
                             Endgame, the Marvel Cinematic Universe delivers a powerful and
-                            emotional conclusion tInfinity More
+                            emotional conclusion tInfinity
                             <button className="see-more-button">More</button>
                         </p>
                         <div className="banner-action">

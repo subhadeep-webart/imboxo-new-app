@@ -1,4 +1,8 @@
+"use client"
 import MovieCard from "@/components/ui/card/MovieCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
 const LifeUfiction = ({ lifeUfictionData }) => {
     return (
         <section className="trending-reels-section">
@@ -11,11 +15,21 @@ const LifeUfiction = ({ lifeUfictionData }) => {
                         <button className="view-all">View All</button>
                     </div>
                 </div>
-                <div className="latest-movies-wrapper full_screen_caraousel">
-                {
-                    lifeUfictionData?.map((movie) => (<MovieCard movieData={movie} key={movie?.id} />))
-                }
-            </div>
+                <div className="full_screen_caraousel">
+                    <Swiper modules={[Autoplay]}
+                        spaceBetween={30}
+                        slidesPerView="auto"
+                        loop={true}
+                        autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+                        className="latest-movies-wrapper">
+                        {
+                            lifeUfictionData?.map((movie) => (<SwiperSlide key={movie?.id} className="each-movie">
+                                <MovieCard movieData={movie} />
+                            </SwiperSlide>))
+                        }
+                    </Swiper>
+
+                </div>
             </div>
         </section>
     )

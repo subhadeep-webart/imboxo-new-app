@@ -11,6 +11,7 @@ import CapturedSection from "@/components/homepage/CapturedSection";
 import TrendingReels from "@/components/homepage/TrendingReels";
 import HboMovie from "@/components/homepage/HboMovie";
 import MovieViewerSection from "@/components/homepage/MovieViewerSection";
+import Visionaries from "@/components/homepage/Visionaries";
 
 const Home = async () => {
   const movies = await getMovies();
@@ -35,112 +36,8 @@ const Home = async () => {
       <CapturedSection />
       {/* Trending Reels */}
       <TrendingReels />
-      <section className="visionaries-section">
-        <div className="container">
-          <div className="section-content">
-            <div className="section-header">
-              <h2 className="section-title">
-                <strong>The Visionaries</strong> Behind the Film
-              </h2>
-              <div className="slider-action">
-                <button className="slider-arrow">
-                  <Image
-                    src="assets/icons/slider-arrow-left.svg"
-                    alt=""
-                    width={17}
-                    height={15}
-                  />
-                </button>
-                <button className="slider-arrow">
-                  <Image
-                    src="assets/icons/slider-arrow-right.svg"
-                    alt=""
-                    width={17}
-                    height={15}
-                  />
-                </button>
-              </div>
-            </div>
-            <div className="visionaries-wrapper">
-              <div className="each-visionary">
-                <div className="visionary-thumb">
-                  <Image src="/assets/images/visionary-1.png" alt="" fill />
-                </div>
-                <h4 className="visionary-name">Jordon Sharma</h4>
-                <a className="visionary-role">Follow</a>
-              </div>
-              <div className="each-visionary">
-                <div className="visionary-thumb">
-                  <Image src="/assets/images/visionary-2.png" alt="" fill />
-                </div>
-                <h4 className="visionary-name">Jordon Sharma</h4>
-                <a className="visionary-role">Follow</a>
-              </div>
-              <div className="each-visionary visionary-bigger">
-                <div className="visionary-thumb-bigger">
-                  <Image src="/assets/images/visionary-3.png" alt="" fill />
-                </div>
-                <div className="visionary-info">
-                  <h4 className="visionary-name">Jordon Sharma</h4>
-                  <a className="visionary-role">Follow</a>
-                </div>
-                <p className="visionary-description">
-                  Worem ipsum dolor sit amet, consectet adipiscing elit.
-                </p>
-                <div className="visionary-socials">
-                  <a className="social-link">
-                    <Image
-                      src="/assets/icons/twitter.svg"
-                      alt=""
-                      width={20}
-                      height={20}
-                    />
-                  </a>
-                  <a className="social-link">
-                    <Image
-                      src="/assets/icons/facebook.svg"
-                      alt=""
-                      width={16}
-                      height={20}
-                    />
-                  </a>
-                  <a className="social-link">
-                    <Image
-                      src="/assets/icons/instagram.svg"
-                      alt=""
-                      width={20}
-                      height={20}
-                    />
-                  </a>
-                  <div className="rating">
-                    <Image
-                      src="/assets/icons/star-full.svg"
-                      alt=""
-                      width={16}
-                      height={16}
-                    />
-                    <span>8.8</span>
-                  </div>
-                </div>
-              </div>
-              <div className="each-visionary">
-                <div className="visionary-thumb">
-                  <Image src="/assets/images/visionary-1.png" alt="" fill />
-                </div>
-                <h4 className="visionary-name">Jordon Sharma</h4>
-                <a className="visionary-role">Follow</a>
-              </div>
-              <div className="each-visionary">
-                <div className="visionary-thumb">
-                  <Image src="/assets/images/visionary-1.png" alt="" fill />
-                </div>
-                <h4 className="visionary-name">Jordon Sharma</h4>
-                <a className="visionary-role">Follow</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Visionaries */}
+      <Visionaries/>
       {/* Top Movies Of The Week Scetion */}
       <TopMoviesOfWeek topMoviesOfWeekData={movieByCategories?.top_pick_week ?? []} />
       {/* <section className="trending-reels-section">
