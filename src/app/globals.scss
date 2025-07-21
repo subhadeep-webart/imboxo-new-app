@@ -173,6 +173,7 @@ h6 {
   width: 100%;
   // Subhadeep Changes
   // min-width: 532px;
+  padding: 20px 0px;
 }
 
 .tags-wrapper {
@@ -315,8 +316,8 @@ h6 {
 }
 
 .latest-movies-wrapper {
-  grid-column: 2/-1;
-  display: grid;
+  // grid-column: 2/-1;
+  // display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 
@@ -326,7 +327,7 @@ h6 {
   .each-movie {
     width: 300px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-
+    cursor: pointer;
     &:hover {
       transform: scale(1.08);
       z-index: 100;
@@ -416,7 +417,7 @@ h6 {
       background: linear-gradient(180deg, #1d1b1f 81.65%, #7c7785 169.59%);
       border-radius: 3px 25px;
       transition: all 1s ease-out;
-
+      cursor: pointer;
       &:hover {
         border: 2px solid #D3C8FB;
         background: linear-gradient(180deg, #1D1B1F 81.65%, #7C7785 169.59%);
@@ -464,7 +465,7 @@ h6 {
   .each-reel {
     width: 192px;
     transition: all 0.3s ease-in-out;
-
+    cursor: pointer;
     &:hover {
       transform: scale(1.08);
     }
@@ -541,6 +542,7 @@ h6 {
     border: 1px solid #696969;
     border-radius: 16px;
     padding: 10px;
+    cursor: pointer;
 
     &.visionary-bigger {
       width: 274px;
@@ -697,7 +699,7 @@ h6 {
     border-radius: 12px;
     margin-left: 50px;
     transition: all 0.3s ease-in-out;
-
+    cursor: pointer;
     &:hover {
       border: 1px solid #451294;
       box-shadow: 0px 2px 26.8px 8px #7F46F240;
