@@ -77,11 +77,10 @@ const Footer = () => {
                             <button>Submit</button>
                         </div>
                     </div>
-
                     <div className="footer__bottom">
                         <p>
-                            Copyright 2024 © IMBOXO. Powered by
-                            <a href="#">WebArt Technology</a> All Rights Reserved.
+                            Copyright © {new Date().getFullYear()} IMBOXO. Powered by
+                            <a href="#"> WebArt Technology</a> All Rights Reserved.
                         </p>
                         <div className="footer__social">
                             <a href="#">
