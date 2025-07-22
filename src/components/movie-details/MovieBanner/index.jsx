@@ -1,5 +1,5 @@
 "use client"
-import { useRef,useEffect } from "react";
+import { useRef, useEffect } from "react";
 import videojs from "video.js";
 const MovieBanner = ({ streamingUrl }) => {
     const videoRef = useRef(null);
@@ -32,15 +32,13 @@ const MovieBanner = ({ streamingUrl }) => {
         };
     }, []);
     return (
-        <section className="banner-section">
-            <div data-vjs-player className="absolute top-0 left-0 w-full h-full">
-                <video
-                    ref={videoRef}
-                    className="video-js vjs-default-skin w-full h-full object-cover"
-                    playsInline
-                />
-            </div>
-        </section>
+        <div data-vjs-player className="absolute top-0 left-0 w-full h-full">
+            <video
+                ref={videoRef}
+                className="video-js vjs-default-skin w-full h-full object-cover"
+                playsInline
+            />
+        </div>
     )
 }
 
