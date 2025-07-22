@@ -1,0 +1,135 @@
+.container {
+    max-width: 400px;
+    margin: 0px auto;
+    padding: 32px 32px;
+    border-radius: 16px;
+    color: #fff;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.label {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.input {
+    width: 100%;
+    padding: 8px 6px;
+    border-radius: 8px;
+    background: #1d1d26;
+    border: 1px solid #2f2f38;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.passwordWrapper {
+    position: relative;
+
+    .toggle {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+}
+
+.forgotWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+}
+
+.forgotLink {
+    font-size: 13px;
+    color: #9875F6;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.submitButton {
+    width: 100%;
+    padding: 12px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 24px;
+    background: linear-gradient(93.52deg, #657AF7 -2.98%, #6A5CF0 41.93%, #6C52EE 65.97%, #9E61FF 97.1%);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(154, 120, 255, 0.2);
+    }
+}
+
+.orDivider {
+    text-align: center;
+    margin: 16px 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.codeButton {
+    width: 100%;
+    padding: 12px;
+    border-radius: 24px;
+    background: transparent;
+    border: 1px solid #9875F6;
+    color: #9875F6;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.terms {
+    font-size: 12px;
+    margin-top: 20px;
+    color: #888;
+
+    a {
+        color: #9875F6;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.signup {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 16px;
+
+    a {
+        color: #9875F6;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.error{
+    font-size: 14px;
+    color: red;
+    position: absolute;
+    margin: 2px 0px;
+    line-height: 16px;
+}

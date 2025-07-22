@@ -1,6 +1,6 @@
 import Styles from "@/app/(auth)/auth.module.scss";
 import MovieSlider from "@/components/authpage/MovieSlider";
-import { Input } from "@heroui/input";
+import LoginForm from "@/components/forms/AuthForm/LoginForm";
 const Login = () => {
     return (
         <div className="container">
@@ -11,9 +11,7 @@ const Login = () => {
                         <MovieSlider />
                     </div>
                     <div className={Styles.form_wrapper}>
-                        <div className={Styles.form_container}>
-
-                        </div>
+                        <LoginForm />
                     </div>
                 </div>
             </div>

@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 const MovieCard = ({ movieData }) => {
     console.log("Movie Data======================>lifeUi", movieData);
-    const { name, duration, release_date, thumbnail } = movieData || {};
+    const { name, duration, release_date, thumbnail,slug } = movieData || {};
     return (
-        <>
+        <Link href={`/movie-details/${slug}`}>
             <div className="movie-image">
                 <Image src={thumbnail} alt={`${name}-image`} fill className="rounded-2xl" />
             </div>
@@ -33,7 +34,7 @@ const MovieCard = ({ movieData }) => {
                     />
                 </div>
             </div>
-        </>
+        </Link>
     )
 }
 

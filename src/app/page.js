@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { getMovies } from "@/server/homepage/movies/getMovies";
-import { getMovieByCategory } from "@/server/homepage/movies/getMovieByCategory";
+import { getMovies } from "@/server/movies/getMovies";
+import { getMovieByCategory } from "@/server/movies/getMovieByCategory";
 import TopMoviesOfWeek from "@/components/homepage/TopMoviesOfWeek";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";

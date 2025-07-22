@@ -28,7 +28,6 @@ const LifeUfiction = ({ lifeUfictionData }) => {
                             </SwiperSlide>))
                         }
                     </Swiper>
-
                 </div>
             </div>
         </section>
