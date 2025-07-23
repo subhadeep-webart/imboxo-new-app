@@ -6,25 +6,26 @@
  * @returns => handleSignup function call this function when submit the clinic signup form and a loading state indicate the request and response time
  */
 
-import { signup } from "@/server/auth/signup";
+import { resendOtp } from "@/server/auth/resendOtp";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const useSignupHandler = () => {
+const useResendOtpHandler = () => {
     const router=useRouter();
     const [isLoading, setIsLoading] = useState(false);
-    const handleSignup = async (signupDetails,reset) => {
+    const handleResendOtp = async (resendOtpDetails,isRedirect=false) => {
         try {
             setIsLoading(true);
-            const result = await signup(signupDetails);
+            const result = await resendOtp(resendOtpDetails);
             if (result?.success) {
-                toast.success(result?.message ?? "");
-                sessionStorage.setItem("emailForOTP", signupDetails.email);
-                router.push("/verify-otp");
-                reset();
+                toast.success(result?.message ?? "Otp Send To Your Email")
+                if(isRedirect){
+                    sessionStorage.setItem("emailForOTP", resendOtpDetails.email);
+                    router.push("/verify-otp");
+                }
             } else {
-                toast.error(result?.message ?? "Sign up Failed");
+                toast.error(result?.message ?? "Otp Send Failed");
             }
         } catch (error) {
             const errorMessage=error?.message ?? "Something went wrong. Please try again." 
@@ -34,7 +35,7 @@ const useSignupHandler = () => {
         }
     };
 
-    return { handleSignup, isLoading }
+    return { handleResendOtp, isLoading }
 }
 
-export default useSignupHandler;
+export default useResendOtpHandler;

@@ -15,7 +15,6 @@ export const getMoviesBySlug = async (slug) => {
 
     return response.data;
   } catch (error) {
-    console.log(error);
     return {};
   }
 };

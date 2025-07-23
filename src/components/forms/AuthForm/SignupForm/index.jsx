@@ -11,7 +11,7 @@ import Link from "next/link";
 import Loader from "@/components/ui/Loader";
 import useSignupHandler from "@/hooks/useSignupHandler";
 
-export default function SignupForm() {
+export default function SignupForm({role}) {
     const {handleSignup,isLoading}=useSignupHandler();
     const [showPassword, setShowPassword] = useState(false);
 
@@ -25,7 +25,7 @@ export default function SignupForm() {
     });
 
     const onSubmit = async(data) => {
-       await handleSignup({role:0,...data},reset);
+       await handleSignup({role,...data},reset);
     };
 
     return (
@@ -42,10 +42,10 @@ export default function SignupForm() {
                 {errors.name && <p className={styles.error}>{errors.name.message}</p>}
             </div>
             <div className="relative">
-                <label className={styles.label}>Email or Mobile Number</label>
+                <label className={styles.label}>Email</label>
                 <input
                     type="text"
-                    placeholder="Enter Email or Number"
+                    placeholder="Enter Email"
                     className={styles.input}
                     {...register("email")}
                 />
@@ -93,7 +93,7 @@ export default function SignupForm() {
                 <Link href="#">Conditions of Use</Link> and <Link href="#">Privacy Notice</Link>.
             </p>
             <p className={styles.signup}>
-                Already Have An Account? <Link href="#">Sign in now.</Link>
+                Already Have An Account? <Link href="/login">Sign in now.</Link>
             </p>
         </form>
     );

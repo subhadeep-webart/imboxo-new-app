@@ -1,26 +1,25 @@
-/* API FOR THE SIGNUP CLINIC */
-"use server"
+// /email-verify
+
+/* API FOR THE SIGIN PASSWORD */
+"use server";
 import axiosInstance from "@/service/api/axiosInstance";
 import { API_ENDPOINTS } from "@/service/api/endpoint";
 
-
-export const signup = async (payload) => {
+export const verifyEmail = async (payload) => {
     try {
-        const response = await axiosInstance.post(
-            API_ENDPOINTS.SIGNUP,
-            payload,
-            {
-                skipAuth: true,
-            }
-        );
-        console.log("Response=========================>",response);
-        if (!response.data.success) {
-            throw new Error(response.data.message ?? "Sign-up failed");
+        const response = await axiosInstance.post(API_ENDPOINTS.VERIFY_EMAIL, payload, {
+            skipAuth: true,
+        });
+        if (!response?.data?.success) {
+            throw new Error(response.data.message ?? "Otp Verification Failed");
         }
 
-        return { success: true, message: response?.data?.message ?? "Account Created Successfully" };
+        return {
+            success: true,
+            message: response?.data?.message ?? "Otp Verified Successfully",
+        };
     } catch (error) {
-         let message = "Resend Otp Failed";
+        let message = "Resend Otp Failed";
         if (Array.isArray(error?.response?.data?.errors)) {
             const errorArray = error.response.data.errors;
 
@@ -34,4 +33,3 @@ export const signup = async (payload) => {
         return { success: false, message };
     }
 };
-

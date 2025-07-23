@@ -1,4 +1,4 @@
-import { object, string,ref } from "yup";
+import { object, string, ref } from "yup";
 
 export const loginFormValidationSchema = object({
     email: string()
@@ -16,4 +16,15 @@ export const signUpFormValidationSchema = object({
     confirmPassword: string()
         .required("Please confirm your password")
         .oneOf([ref("password"), null], "Password must match"),
+})
+
+export const verifyEmailValiation = object({
+    email: string().email().required("Please enter your email"),
+})
+
+export const resetPasswordValidation = object({
+    new_password: string().min(8).required("Please enter your password"),
+    confirm_password: string()
+        .required("Please confirm your password")
+        .oneOf([ref("new_password"), null], "Password must match"),
 })

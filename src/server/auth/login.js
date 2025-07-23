@@ -12,17 +12,17 @@ export const login = async (payload) => {
     if (!response?.data?.success) {
       throw new Error(response.data.message ?? "Login Failed");
     }
-    console.log("Login Response======================>",response);
+    console.log("Login Response======================>", response);
     const token = response?.data?.data?.token;
     const roles = response?.data?.data?.user?.roles[0]?.name;
 
     if (roles === 'Clinic') {
-    
+
     }
 
     const cookieStore = await cookies();
 
-    console.log("token",token);
+    console.log("token", token);
 
     // if (roles === 'Clinic') {
     //   cookieStore.set("clinic-token", token, {
@@ -65,9 +65,14 @@ export const login = async (payload) => {
       message: response?.data?.message ?? "Login Successfull",
     };
   } catch (error) {
-    let message = "Login Failed";
+    let message = "Resend Otp Failed";
     if (Array.isArray(error?.response?.data?.errors)) {
-      message = error.response.data.errors.join(" & ");
+      const errorArray = error.response.data.errors;
+
+      // Extract and join messages from each object
+      message = errorArray
+        .map(err => Object.values(err).join(" ")) // or `.join(", ")` if multiple keys per object
+        .join(" & ");
     } else if (typeof error?.response?.data?.message === "string") {
       message = error.response.data.message;
     }

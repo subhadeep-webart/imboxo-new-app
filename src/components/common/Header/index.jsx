@@ -22,7 +22,8 @@ const Header = () => {
                 </div>
 
                 <div className="navbar__right">
-                    <button className="navbar__cta">Become a Creator</button>
+                    <Link className="navbar__cta" href={"/creator-sign-up"}>Become a Creator</Link>
+                    <Link className="navbar__cta" href={"/login"}>Login</Link>
                     <Image
                         src="/assets/icons/search.svg"
                         alt="Search"
@@ -30,13 +31,13 @@ const Header = () => {
                         height={24}
                         className="navbar__search-icon"
                     />
-                    <Image
+                    {/* <Image
                         src="/assets/images/user-avatar.jpg"
                         alt="User"
                         width={32}
                         height={32}
                         className="navbar__avatar"
-                    />
+                    /> */}
                     {/* <Link className="navbar__cta" href={"/login"}>Login</Link> */}
                 </div>
             </nav>

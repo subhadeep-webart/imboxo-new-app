@@ -5,7 +5,7 @@
 
 @layer utilities {
   .full_screen_caraousel {
-    @apply relative left-0 w-[100vw] ;
+    @apply relative left-0 w-[100vw];
   }
 }
 
@@ -124,7 +124,7 @@ h6 {
   padding: 0 24px;
 }
 
-.text-purple{
+.text-purple {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
@@ -206,15 +206,17 @@ h6 {
 
   &:has(.swiper-slide-active .slide-1) {
     background: linear-gradient(8.18deg, rgba(6, 1, 14, 0.85) 34.12%, rgba(6, 1, 14, 0) 74.52%),
-    url(/assets/images/home-banner-bg.webp) no-repeat center center;
+      url(/assets/images/home-banner-bg.webp) no-repeat center center;
   }
+
   &:has(.swiper-slide-active .slide-2) {
     background: linear-gradient(8.18deg, rgba(6, 1, 14, 0.85) 34.12%, rgba(6, 1, 14, 0) 74.52%),
-    url(/assets/images/movie_image_8.webp) no-repeat center center;
+      url(/assets/images/movie_image_8.webp) no-repeat center center;
   }
+
   &:has(.swiper-slide-active .slide-3) {
     background: linear-gradient(8.18deg, rgba(6, 1, 14, 0.85) 34.12%, rgba(6, 1, 14, 0) 74.52%),
-    url(/assets/images/rank-1.png) no-repeat center center;
+      url(/assets/images/rank-1.png) no-repeat center center;
   }
 }
 
@@ -1023,35 +1025,37 @@ h6 {
   padding-bottom: 20px !important;
 }
 
-.movie_slider_swipper{
+.movie_slider_swipper {
+  padding: 0px 0px !important;
+
   .swiper-pagination {
-        position: absolute;
-        bottom: 10px; // or adjust based on your layout
-        right: auto;
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 6px;
-        z-index: 10;
-        width: fit-content;
+    position: absolute;
+    bottom: 10px; // or adjust based on your layout
+    right: auto;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+    width: fit-content;
 
-        .swiper-pagination-bullet {
-            width: 16px;
-            height: 0px;
-            border: 1.5px solid rgba(255, 255, 255, 0.3);
-            opacity: 0.6;
-            background-color: #E3E3E3; // dim white
-            border-radius: 1px;
-            transition: all 0.3s ease;
-            opacity: 1; // ensure it's always visible
-            margin: 0;
-        }
-
-        .swiper-pagination-bullet-active {
-            width: 84px;
-            border-color: #9875F6;
-            opacity: 1; // highlighted purple (or use exact from Figma)
-        }
+    .swiper-pagination-bullet {
+      width: 16px;
+      height: 0px;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      opacity: 0.6;
+      background-color: #E3E3E3; // dim white
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      opacity: 1; // ensure it's always visible
+      margin: 0;
     }
+
+    .swiper-pagination-bullet-active {
+      width: 84px;
+      border-color: #9875F6;
+      opacity: 1; // highlighted purple (or use exact from Figma)
+    }
+  }
 }

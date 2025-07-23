@@ -11,7 +11,6 @@ const MovieSlider = () => {
             loop={true}
             autoplay={{ delay: 3000 }}
             pagination={{ clickable: true}}
-            style={{padding:"0px 0px !important"}}
             className="movie_slider_swipper"
             >
             {

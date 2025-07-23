@@ -6,25 +6,21 @@
  * @returns => handleSignup function call this function when submit the clinic signup form and a loading state indicate the request and response time
  */
 
-import { signup } from "@/server/auth/signup";
-import { useRouter } from "next/navigation";
+import { verifyEmail } from "@/server/auth/verifyEmail";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const useSignupHandler = () => {
-    const router=useRouter();
+const useVerifyEmailHandler = () => {
     const [isLoading, setIsLoading] = useState(false);
-    const handleSignup = async (signupDetails,reset) => {
+    const handleVerifyEmail = async (emailVerificationDetails) => {
         try {
             setIsLoading(true);
-            const result = await signup(signupDetails);
+            const result = await verifyEmail(emailVerificationDetails);
             if (result?.success) {
-                toast.success(result?.message ?? "");
-                sessionStorage.setItem("emailForOTP", signupDetails.email);
-                router.push("/verify-otp");
-                reset();
+                sessionStorage.clear();
+                toast.success(result?.message ?? "Email Verification Completed");
             } else {
-                toast.error(result?.message ?? "Sign up Failed");
+                toast.error(result?.message ?? "Email verification Failed");
             }
         } catch (error) {
             const errorMessage=error?.message ?? "Something went wrong. Please try again." 
@@ -34,7 +30,7 @@ const useSignupHandler = () => {
         }
     };
 
-    return { handleSignup, isLoading }
+    return { handleVerifyEmail, isLoading }
 }
 
-export default useSignupHandler;
+export default useVerifyEmailHandler;

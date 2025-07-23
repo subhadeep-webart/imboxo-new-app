@@ -2,17 +2,17 @@ import Styles from "@/app/(auth)/auth.module.scss";
 import MovieSlider from "@/components/authpage/MovieSlider";
 import SignupForm from "@/components/forms/AuthForm/SignupForm";
 
-const SignUp = () => {
+const CreatorSignUp = () => {
     return (
         <div className="container">
             <div className={Styles.auth_page_form_wrapper}>
                 {/* <div className={Styles.border_gradient}> */}
                 <div className={Styles.form_background}>
                     <div className={Styles.form_slider}>
-                        <MovieSlider />
+                        <MovieSlider/>
                     </div>
                     <div className={Styles.form_wrapper}>
-                        <SignupForm role={1} />
+                        <SignupForm role={0}/>
                     </div>
                 </div>
             </div>
@@ -20,4 +20,4 @@ const SignUp = () => {
     )
 }
 
-export default SignUp;
+export default CreatorSignUp;

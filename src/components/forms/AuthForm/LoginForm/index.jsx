@@ -61,9 +61,9 @@ export default function LoginForm() {
             {errors.password && <p className={styles.error}>{errors.password.message}</p>}
 
             <div className={styles.forgotWrapper}>
-                <a href="#" className={styles.forgotLink}>
+                <Link href="/forgot-password" className={styles.forgotLink}>
                     Forgot Password?
-                </a>
+                </Link>
             </div>
 
             <button type="submit" className={styles.submitButton} disabled={isLoading}>{isLoading ? <Loader/> : "Submit"}</button>
@@ -78,7 +78,7 @@ export default function LoginForm() {
             </p>
 
             <p className={styles.signup}>
-                New to Imboxo? <Link href="#">Sign up now.</Link>
+                New to Imboxo? <Link href="/sign-up">Sign up now.</Link>
             </p>
         </form>
     );

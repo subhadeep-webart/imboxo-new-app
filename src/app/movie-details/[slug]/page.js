@@ -1,10 +1,13 @@
 import MovieBanner from "@/components/movie-details/MovieBanner";
 import MovieDetailsSection from "@/components/movie-details/MovieDetailsSection";
+import MovieScenes from "@/components/movie-details/MovieScenes";
+import RecomendedMovie from "@/components/movie-details/RecomendedMovie";
 import { getFetchMovieFromS3 } from "@/server/movies/getFetchMovieFromS3";
 import { getMoviesBySlug } from "@/server/movies/getMoviesBySlug";
 
 const MovieDetails = async ({ params }) => {
-    const { slug } = params || {};
+    const pageParams=await params;
+    const { slug } = pageParams || {};
     let movieDetails = {};
     let movieVideo = {};
     if (slug) {
@@ -12,8 +15,7 @@ const MovieDetails = async ({ params }) => {
         movieVideo = await getFetchMovieFromS3({ type: "trailer", id: movieDetails?.data.id })
     }
 
-    console.log("Movie Details Page=======>", movieDetails);
-    console.log("Movie Details Page1122==================>", movieVideo);
+    console.log("===============12", JSON.stringify(movieDetails, null, 2));
     return (
         <section>
             <div className="banner-section">
@@ -22,6 +24,8 @@ const MovieDetails = async ({ params }) => {
             <div className="container">
                 <MovieDetailsSection movieDetails={movieDetails?.data || {}} />
             </div>
+            <MovieScenes/>
+            <RecomendedMovie related_movies={movieDetails?.data?.related_movies || []}/>
         </section>
     )
 }
