@@ -6,7 +6,7 @@ const MovieDetailsSection = ({ movieDetails }) => {
     const { name, poster, description, genre = [], director,release_date,duration } = movieDetails;
     console.log("Movie Details====12", genre);
     return (
-        <div className={styles.movie_details_wrapper}>
+        <section className={styles.movie_details_wrapper}>
             <div className={styles.movie_image_container}>
                 <Image
                     src={poster}
@@ -17,7 +17,7 @@ const MovieDetailsSection = ({ movieDetails }) => {
             </div>
             <div className="w-full flex flex-col justify-start items-center gap-3">
                 {/* Movie info content here */}
-                <div className="w-full flex justify-between items-start">
+                <div className="w-full flex justify-between items-start z-[999]">
                     <div className={styles.movie_title_wrapper}>
                         <h1 className={`${styles.movie_title} line-clamp-1`}>{name}</h1>
                         <div className="flex gap-4 w-full">
@@ -93,7 +93,7 @@ const MovieDetailsSection = ({ movieDetails }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     )
 
 }

@@ -1,8 +1,9 @@
 "use client"
+import MovieCard from "@/components/ui/card/MovieCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { useRef } from "react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 const LatestUploadByCreator = ({ movieData }) => {
     console.log("Latest Release Movie Data=====================>", movieData);
     const prevRef = useRef(null);
@@ -37,14 +38,17 @@ const LatestUploadByCreator = ({ movieData }) => {
                             </button>
                         </div>
                     </div>
-
-                    {/* {
-                            movieData?.map((movieData)=>(<MovieCard movieData={movieData} key={movieData?.id}/>))
-                        } */}
                     <Swiper
-                        modules={[Navigation]}
+                        modules={[Navigation, Autoplay]}
                         spaceBetween={24}
-                        slidesPerView={"auto"}
+                        slidesPerGroup={3}
+                        slidesPerView={3}
+                        effect="fade" // <--- enable fade effect
+                        fadeEffect={{ crossFade: true }} // optional: smooth cross fade
+                        autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        }}
                         navigation={{
                             prevEl: prevRef.current,
                             nextEl: nextRef.current,
@@ -54,355 +58,16 @@ const LatestUploadByCreator = ({ movieData }) => {
                             swiper.params.navigation.nextEl = nextRef.current;
                         }}
                         className="latest-movies-wrapper"
-                        style={{ paddingLeft: "20px !important",width:"75%" }}
+                        style={{ paddingLeft: "20px !important", width: "84%",marginRight: "-44px" }}
                         loop={true}
-                        autoplay={true}
                     >
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-1.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-1.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-3.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide className="each-movie">
-                            <div className="movie-image">
-                                <Image src="/assets/images/latest-movie-2.png" alt="" fill />
-                            </div>
-                            <div className="movie-info">
-                                <div className="movie-details">
-                                    <h3 className="movie-title">Oppenheimer</h3>
-                                    <div className="content-details">
-                                        <div className="rating">
-                                            <Image
-                                                src="/assets/icons/star-full.svg"
-                                                alt=""
-                                                width={16}
-                                                height={16}
-                                            />
-                                            <span>8.8</span>
-                                        </div>
-                                        <span className="year">2023</span>
-                                        <span className="duration">3h 5m</span>
-                                    </div>
-                                </div>
-                                <div className="movie-action">
-                                    <Image
-                                        src="/assets/icons/play-in-circle.svg"
-                                        alt=""
-                                        width={32}
-                                        height={32}
-                                    />
-                                </div>
-                            </div>
-                        </SwiperSlide>
+                        {
+                            movieData?.map((movieData) => (<SwiperSlide key={movieData?.id} className="each-movie"><MovieCard movieData={movieData} /></SwiperSlide>))
+                        }
                     </Swiper>
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 

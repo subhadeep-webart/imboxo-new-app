@@ -3,6 +3,7 @@
     margin-inline: auto;
     display: flex;
     gap: 30px;
+    margin-top: -100px;
 }
 
 .movie_image_container {
@@ -20,6 +21,7 @@
 .movie_title_wrapper {
     max-width: 400px;
     width: 100%;
+    z-index: 80;
 }
 
 .movie_title {

@@ -1,0 +1,32 @@
+.profile_banner_section {
+    height: 364px;
+    background: linear-gradient(174.53deg, rgba(0, 0, 0, 0) -2.51%, rgba(0, 0, 0, 0.4) 99.12%),
+        url(/assets/images/Profile_bakground_image.webp) no-repeat center center;
+
+    background-size: cover;
+    // padding-block: 115px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: end;
+    overflow: hidden;
+    isolation: isolate;
+    position: relative;
+    border-radius: 16px;
+}
+
+.profile_info_wrapper{
+    margin-top: -65px;
+}
+
+.profile_image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #9875F6;
+    overflow: hidden;
+}
+
+.profile_name{
+    
+}

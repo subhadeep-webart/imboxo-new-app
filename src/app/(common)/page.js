@@ -23,7 +23,7 @@ const Home = async () => {
       {/* Home Banner Section */}
       <HomeBanner />
       {/* Latest Upload by creator section */}
-      <LatestUploadByCreator movieData={movieByCategories?.latest_releases?.slice(0, 3) || []} />
+      <LatestUploadByCreator movieData={movieByCategories?.latest_releases || []} />
       {/* Captured Studio Setion */}
       <CapturedSection />
       {/* Trending Reels */}

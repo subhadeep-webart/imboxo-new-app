@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
+import 'swiper/css/effect-fade';
 
 const slides = [1, 2, 3]; // You already repeat the content 3 times
 
@@ -11,12 +12,13 @@ const HomeBanner = () => {
         <section className="banner-section">
             <div className="container">
                 <Swiper
-                    modules={[Autoplay, Pagination,EffectFade]}
+                    modules={[Autoplay, Pagination, EffectFade]}
                     spaceBetween={0}
                     slidesPerView={1}
                     loop={true}
                     effect="fade" // <--- enable fade effect
                     fadeEffect={{ crossFade: true }} // optional: smooth cross fade
+                    speed={1000}
                     autoplay={{
                         delay: 4000,
                         disableOnInteraction: false,
