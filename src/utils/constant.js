@@ -12,3 +12,16 @@ export const AUTH_PAGE_SLIDER_IMAGE = [
         key: 2,
         image: AUTH_SLIDER_2
     }]
+
+/* Common Header */
+export const COMMON_HEADER_NAV_ITEMS = [
+    { label: "Home", path: "/" },
+    { label: "About Us", path: "/about" },
+    { label: "Explore", path: "/movies" },
+    { label: "Donate", path: "#" },
+    { label: "Live", path: "#" },
+    { label: "Shop", path: "#" },
+    { label: "Festival", path: "#" },
+    { label: "Film Makers", path: "#" },
+    { label: "Community", path: "#" },
+];

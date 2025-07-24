@@ -1,0 +1,65 @@
+.dropdownContainer {
+  position: relative;
+  width: 186px;
+
+  .dropdownButton {
+    width: 100%;
+    height: 40px;
+    padding: 10px 24px;
+    border-radius: 25px;
+    border: 1.3px solid #757288;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='20,50 70,100 120,50' stroke='%239D9D9D' stroke-width='15' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 12px;
+    color: #ffffff;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+      border-color: #888;
+    }
+  }
+
+  .dropdownList {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background-color: #1c1c1e;
+    border: 1px solid #757288;
+    border-radius: 8px;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+
+    li {
+      a {
+        display: block;
+        padding: 10px 16px;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+        transition: background 0.2s ease-in-out;
+
+        &:hover {
+          background-color: #333;
+        }
+      }
+    }
+  }
+}
+
+
+.movie_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 27px;
+}

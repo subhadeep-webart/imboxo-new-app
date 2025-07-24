@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Pagination } from "swiper/modules";
-import "swiper/css";
-import 'swiper/css/effect-fade';
 
 const slides = [1, 2, 3]; // You already repeat the content 3 times
 

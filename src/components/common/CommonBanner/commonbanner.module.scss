@@ -1,0 +1,25 @@
+.banner_section {
+    height: 592px;
+    // background: linear-gradient(8.18deg, rgba(6, 1, 14, 0.85) 34.12%, rgba(6, 1, 14, 0) 74.52%),
+    //   url(/assets/images/home-banner-bg.webp) no-repeat center center;
+    background-size: cover;
+    // padding-block: 115px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: end;
+    overflow: hidden;
+    isolation: isolate;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 1;
+        pointer-events: none;
+        background: linear-gradient(8.18deg,
+                rgba(6, 1, 14, 0.85) 34.12%,
+                rgba(6, 1, 14, 0) 74.52%);
+        z-index: -999;
+    }
+}

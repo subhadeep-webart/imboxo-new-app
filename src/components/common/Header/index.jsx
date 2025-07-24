@@ -1,3 +1,4 @@
+import { COMMON_HEADER_NAV_ITEMS } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
 const Header = () => {
@@ -5,22 +6,19 @@ const Header = () => {
         <div className="container">
             <nav className="navbar">
                 <div className="navbar__left">
-                    <div className="navbar__logo">
-                        <Image src="/assets/images/logo.png" width={117} height={24} alt="" />
-                    </div>
+                    <Link href={"/"}>
+                        <div className="navbar__logo">
+                            <Image src="/assets/images/logo.png" width={117} height={24} alt="" />
+                        </div>
+                    </Link>
                     <ul className="navbar__menu">
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>Explore</li>
-                        <li>Donate</li>
-                        <li>Live</li>
-                        <li>Shop</li>
-                        <li>Festival</li>
-                        <li>Film Makers</li>
-                        <li>Community</li>
+                        {
+                            COMMON_HEADER_NAV_ITEMS.map((navItem, index) => (<Link href={navItem.path} key={`nav-item-${index + 1}`}>
+                                <li>{navItem.label}</li>
+                            </Link>))
+                        }
                     </ul>
                 </div>
-
                 <div className="navbar__right">
                     <Link className="navbar__cta" href={"/creator-sign-up"}>Become a Creator</Link>
                     <Link className="navbar__cta" href={"/login"}>Login</Link>

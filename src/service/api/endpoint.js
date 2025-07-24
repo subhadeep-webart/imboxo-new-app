@@ -8,5 +8,7 @@ export const API_ENDPOINTS={
     GET_MOVIE:"/movie-list",
     GET_MOVIE_CATEGORY_WISE:"/movie-collection",
     GET_MOVIE_DETAILS:"/movie-details",
-    GET_MOVIE_S3:"/fetch-file-url-from-S3"
+    GET_MOVIE_S3:"/fetch-file-url-from-S3",
+    GET_ALL_GENRES:"/genres",
+    GET_ALL_MOVIES_BY_GENRE:"/movie-filter"
 }
