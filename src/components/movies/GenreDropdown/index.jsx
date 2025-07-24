@@ -13,7 +13,7 @@ const GenreDropdown = ({ allGenres }) => {
                 className={`${styles.dropdownButton} line-clamp-1`}
                 onClick={() => setIsOpen((prevOpen) => !prevOpen)}
             >
-                {decodeURIComponent(slug) || "Select Genre"}
+                {slug ? decodeURIComponent(slug) : "Select Genre"}
             </button>
 
             {isOpen && (
