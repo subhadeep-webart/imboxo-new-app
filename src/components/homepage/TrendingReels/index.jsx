@@ -19,11 +19,11 @@ const TrendingReels = () => {
             <div className="w-full">
                 <Swiper modules={[Autoplay]}
                     spaceBetween={30}
-                    fadeEffect={{ crossFade: true }}
-                    slidesPerView={7}
-                    slidesPerGroup={7}
+                    slidesPerView={6}
+                    slidesPerGroup={6}
                     loop={true}
-                    autoplay={{ delay: 4000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+                    autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+                    speed={3000}
                     className="reels-wrapper">
                     <SwiperSlide className="each-reel">
                         <div className="reel-thumb">
@@ -191,36 +191,6 @@ const TrendingReels = () => {
                         <h4 className="reel-title">Archer</h4>
                     </SwiperSlide>
                     <SwiperSlide className="each-reel">
-                        <div className="reel-thumb">
-                            <Image src="/assets/images/reel-3.png" alt="" fill />
-                            <div className="play-backdrop">
-                                <Image
-                                    src="/assets/icons/play-in-circle.svg"
-                                    alt=""
-                                    width={32}
-                                    height={32}
-                                />
-                            </div>
-                            <div className="reel-views-indicator"><Image src={EYE_ICON.src} alt="Views" height={16} width={16} className="pe-2" /><span className="text-white text-sm">20k</span></div>
-                        </div>
-                        <h4 className="reel-title">Archer</h4>
-                    </SwiperSlide>
-                    <SwiperSlide className="each-reel">
-                        <div className="reel-thumb">
-                            <Image src="/assets/images/reel-3.png" alt="" fill />
-                            <div className="play-backdrop">
-                                <Image
-                                    src="/assets/icons/play-in-circle.svg"
-                                    alt=""
-                                    width={32}
-                                    height={32}
-                                />
-                            </div>
-                            <div className="reel-views-indicator"><Image src={EYE_ICON.src} alt="Views" height={16} width={16} className="pe-2" /><span className="text-white text-sm">20k</span></div>
-                        </div>
-                        <h4 className="reel-title">Archer</h4>
-                    </SwiperSlide>
-                      <SwiperSlide className="each-reel">
                         <div className="reel-thumb">
                             <Image src="/assets/images/reel-3.png" alt="" fill />
                             <div className="play-backdrop">

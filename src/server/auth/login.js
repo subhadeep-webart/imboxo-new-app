@@ -9,10 +9,11 @@ export const login = async (payload) => {
     const response = await axiosInstance.post(API_ENDPOINTS.LOGIN, payload, {
       skipAuth: true,
     });
+    console.log("Login Response======================>", response?.data);
     if (!response?.data?.success) {
       throw new Error(response.data.message ?? "Login Failed");
     }
-    console.log("Login Response======================>", response);
+    console.log("Login Response======================>", response?.data);
     const token = response?.data?.data?.token;
     const roles = response?.data?.data?.user?.roles[0]?.name;
 

@@ -18,9 +18,8 @@ const useLoginHandler=()=>{
         try {
             setIsLoading(true);
             const result = await login(loginDetails);
-         
+            console.log("The Result======>",result);
             if (result?.success) {
-               
                 toast.success(result?.message);
                 reset();
                 // if(result?.roles==='Clinic'){

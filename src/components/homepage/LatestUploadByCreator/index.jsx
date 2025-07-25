@@ -40,13 +40,11 @@ const LatestUploadByCreator = ({ movieData }) => {
                     </div>
                     <Swiper
                         modules={[Navigation, Autoplay]}
-                        spaceBetween={24}
                         slidesPerGroup={3}
                         slidesPerView={3}
-                        effect="fade" // <--- enable fade effect
-                        fadeEffect={{ crossFade: true }} // optional: smooth cross fade
+                        speed={3000}
                         autoplay={{
-                            delay: 4000,
+                            delay: 2000,
                             disableOnInteraction: false,
                         }}
                         navigation={{

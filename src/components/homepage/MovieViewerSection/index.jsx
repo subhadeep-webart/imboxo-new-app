@@ -1,22 +1,28 @@
 "use client"
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { EffectFade, Navigation } from "swiper/modules";
 import { useRef } from "react";
+import 'swiper/css/effect-fade';
+
 const MovieViewerSection = () => {
     const nextRef = useRef(null);
     const prevRef = useRef(null);
     return (
         <section className="movie-slider-wrapper">
             <div className="container">
-                <Swiper modules={[Navigation]}
+                <Swiper modules={[Navigation,EffectFade]}
                     spaceBetween={24}
                     slidesPerView={1}
                     loop={true}
-                    // autoplay={{
-                    //     delay: 4000,
-                    //     disableOnInteraction: false,
-                    // }}
+                    autoplay={{
+                        delay: 2000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    }}
+                    effect="fade" // <--- enable fade effect
+                    fadeEffect={{ crossFade: true }} // optional: smooth cross fade
+                    speed={3000}
                     navigation={{
                         prevEl: prevRef.current,
                         nextEl: nextRef.current,
@@ -25,7 +31,7 @@ const MovieViewerSection = () => {
                         swiper.params.navigation.prevEl = prevRef.current;
                         swiper.params.navigation.nextEl = nextRef.current;
                     }}
-                    style={{position:"relative"}}>
+                    style={{ position: "relative" }}>
                     <SwiperSlide className="movie-slider">
                         <div className="banner-content">
                             <ul className="tags-wrapper">
@@ -305,11 +311,7 @@ const MovieViewerSection = () => {
                             </button>
                         </div>
                     </div>
-
                 </Swiper>
-                {/* <div className="movie-slider">
-
-                </div> */}
             </div>
         </section>
     )

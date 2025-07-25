@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, EffectFade } from "swiper/modules";
 const HboMovie = () => {
   return (
     <section className="trending-reels-section">
@@ -14,10 +14,12 @@ const HboMovie = () => {
             <button className="view-all">View All</button>
           </div>
           <div className="full_screen_caraousel">
-            <Swiper modules={[Autoplay]}
+            <Swiper modules={[Autoplay,EffectFade]}
               spaceBetween={30}
               slidesPerView="auto"
+              speed={1500}
               loop={true}
+              effect="fade"
               autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
               className="latest-movies-wrapper"
             >

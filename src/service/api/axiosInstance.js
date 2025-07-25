@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
-    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+    // "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
   },
 });
 

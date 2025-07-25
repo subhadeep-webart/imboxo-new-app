@@ -1,10 +1,10 @@
 import MovieCategoryTagBadge from "./MovieCategoryTagBadge";
 const MovieGenreList = ({ genreList }) => {
     return (
-        <ul className="tags-wrapper">
+        <ul className="tags-wrapper" >
             {
                 genreList.map((genre, index) => (
-                    <MovieCategoryTagBadge categoryType={genre} key={`genre-${index + 1}`} />
+                    <MovieCategoryTagBadge categoryType={genre} key={crypto.randomUUID()} index={index}/>
                 ))
             }
         </ul>

@@ -1,32 +1,16 @@
 "use client"
 import Image from "next/image";
-import { useState,useEffect } from "react";
-import MovieCategoryTagBadge from "./MovieCategoryTagBadge";
-import MovieGenreList from "./MovieGenreList";
+import { useState, useEffect } from "react";
 import TopRankMovieList from "./TopRankMovieList";
+import TopMoviesBannerContent from "./TopMoviesBannerContent";
 const TopMoviesOfWeek = ({ topMoviesOfWeekData }) => {
-    console.log("Top movies of week data inside the component", topMoviesOfWeekData);
-    const [currentIndex, setCurrentIndex] = useState(0);
 
     if (topMoviesOfWeekData.length < 0) return null;
 
-    // const currentMovie = topMoviesOfWeekData[currentIndex];
-
-    // const handleNext = () => {
-    //     const newIndex = (currentIndex + 1) % topMoviesOfWeekData.length;
-    //     setCurrentIndex(newIndex);
-    // };
-
-    // const handlePrev = () => {
-    //     const newIndex =
-    //         (currentIndex - 1 + topMoviesOfWeekData.length) %
-    //         topMoviesOfWeekData.length;
-    //     setCurrentIndex(newIndex);
-    // };
     const [movieList, setMovieList] = useState([]);
     const [currentMovie, setCurrentMovie] = useState(null);
 
-    const { genreList = [], name, thumbnail } = currentMovie || {};
+    const { thumbnail } = currentMovie || {}
 
     useEffect(() => {
         if (topMoviesOfWeekData?.length) {
@@ -34,6 +18,14 @@ const TopMoviesOfWeek = ({ topMoviesOfWeekData }) => {
             setCurrentMovie(topMoviesOfWeekData[0]);
         }
     }, [topMoviesOfWeekData]);
+
+    useEffect(() => {
+        const autoSlideInterval = setInterval(() => {
+            handleNext();
+        }, 4000);
+
+        return () => clearInterval(autoSlideInterval);
+    }, [movieList]);
 
     const handleNext = () => {
         const rotatedList = [...movieList.slice(1), movieList[0]];
@@ -48,7 +40,7 @@ const TopMoviesOfWeek = ({ topMoviesOfWeekData }) => {
     };
 
     return (
-        <section className="top-rank-section">
+        <section className="top-rank-section" style={{ background: `url(${thumbnail}) no-repeat center center` }}>
             <div className="container">
                 <div className="section-header">
                     <h2 className="section-title">
@@ -74,74 +66,7 @@ const TopMoviesOfWeek = ({ topMoviesOfWeekData }) => {
                     </div>
                 </div>
                 <div className="wrapper">
-                    <div className="banner-content">
-                        {
-                            genreList.length > 0 && <MovieGenreList genreList={genreList.slice(0,4)} />
-                        }
-                        <h1 className="banner-title line-clamp-1">{name}</h1>
-                        <div className="content-info">
-                            <ul className="stars-wrapper">
-                                <li className="each-star">
-                                    <Image
-                                        src="/assets/icons/star-full.svg"
-                                        alt=""
-                                        width={20}
-                                        height={20}
-                                    />
-                                </li>
-                                <li className="each-star">
-                                    <Image
-                                        src="/assets/icons/star-full.svg"
-                                        alt=""
-                                        width={20}
-                                        height={20}
-                                    />
-                                </li>
-                                <li className="each-star">
-                                    <Image
-                                        src="/assets/icons/star-full.svg"
-                                        alt=""
-                                        width={20}
-                                        height={20}
-                                    />
-                                </li>
-                                <li className="each-star">
-                                    <Image
-                                        src="/assets/icons/star-full.svg"
-                                        alt=""
-                                        width={20}
-                                        height={20}
-                                    />
-                                </li>
-                                <li className="each-star">
-                                    <Image
-                                        src="/assets/icons/star-empty.svg"
-                                        alt=""
-                                        width={20}
-                                        height={20}
-                                    />
-                                </li>
-                            </ul>
-                            <span className="year">2023</span>
-                            <span className="duration">3h 5m</span>
-                        </div>
-                        <p className="description">
-                            Endgame, the Marvel Cinematic Universe delivers a powerful and
-                            emotional conclusion tInfinity
-                            <button className="see-more-button">More</button>
-                        </p>
-                        <div className="banner-action">
-                            <button className="button button-pill button-theme">
-                                Watch Movie{" "}
-                                <Image
-                                    src="/assets/icons/play-in-circle.svg"
-                                    alt=""
-                                    width={16}
-                                    height={16}
-                                />
-                            </button>
-                        </div>
-                    </div>
+                    <TopMoviesBannerContent currentMovie={currentMovie} />
                     {
                         movieList?.length > 0 && <TopRankMovieList movieListData={movieList} />
                     }

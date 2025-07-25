@@ -18,10 +18,11 @@ const HomeBanner = () => {
                     loop={true}
                     effect="fade" // <--- enable fade effect
                     fadeEffect={{ crossFade: true }} // optional: smooth cross fade
-                    speed={1000}
+                    speed={2000}
                     autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
+                        delay: 2000,
+                        disableOnInteraction: true,
+                        pauseOnMouseEnter: true
                     }}
                     pagination={{
                         clickable: true,

@@ -2,7 +2,7 @@
 
 import styles from "../authform.module.scss";
 import { useState } from "react";
-import { PASSWORD_EYE_ICON } from "@/utils/icons";
+import { GOOGLE_ICON, PASSWORD_EYE_ICON } from "@/utils/icons";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -70,7 +70,9 @@ export default function LoginForm() {
 
             <div className={styles.orDivider}>Or</div>
 
-            <button type="button" className={styles.codeButton} disabled={isLoading}>Use a Sign In Code</button>
+            <button type="button" className={styles.codeButton} disabled={isLoading}>
+                <Image src={GOOGLE_ICON} width={18} height={18} alt="Google Icon"/>
+                Sign in</button>
 
             <p className={styles.terms}>
                 By continuing, you agree to the Imboxo{" "}

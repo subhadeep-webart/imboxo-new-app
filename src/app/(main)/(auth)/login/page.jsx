@@ -1,4 +1,4 @@
-import Styles from "@/app/(auth)/auth.module.scss";
+import Styles from "@/app/(main)/(auth)/auth.module.scss"
 import MovieSlider from "@/components/authpage/MovieSlider";
 import LoginForm from "@/components/forms/AuthForm/LoginForm";
 const Login = () => {

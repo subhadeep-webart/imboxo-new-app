@@ -2,6 +2,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import MovieCard from "@/components/ui/card/MovieCard";
+import 'swiper/css/effect-fade';
 const EachMovieSection = ({movieCategoryName,movieListData}) => {
     return (
         <section className="trending-reels-section">
@@ -16,8 +17,9 @@ const EachMovieSection = ({movieCategoryName,movieListData}) => {
                 </div>
             </div>
             <Swiper modules={[Autoplay]}
-                spaceBetween={30}
-                slidesPerView="auto"
+                slidesPerView={4}
+                slidesPerGroup={4}
+                speed={3000}
                 loop={true}
                 autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
                 className="latest-movies-wrapper">
