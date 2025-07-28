@@ -22,7 +22,7 @@ const useLoginHandler=()=>{
             if (result?.success) {
                 toast.success(result?.message);
                 reset();
-                router.push("/profile/creator")
+                router.push("/profile/creator/upload-movie")
                 // if(result?.roles==='Clinic'){
                 //     router.push('/clinic/all-schedule');
                 // }else{
