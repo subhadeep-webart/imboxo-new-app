@@ -1,6 +1,6 @@
 "use client"
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import MovieCard from "@/components/ui/card/MovieCard";
 import 'swiper/css/effect-fade';
 const EachMovieSection = ({movieCategoryName,movieListData}) => {
@@ -16,15 +16,17 @@ const EachMovieSection = ({movieCategoryName,movieListData}) => {
                     </div>
                 </div>
             </div>
-            <Swiper modules={[Autoplay]}
+            <Swiper modules={[Autoplay,Navigation]}
                 slidesPerView={4}
                 slidesPerGroup={4}
+                loopFillGroupWithBlank={true}
                 speed={3000}
                 loop={true}
+                navigation={true}
                 autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
                 className="latest-movies-wrapper">
                 {
-                    movieListData?.map((movie) => (<SwiperSlide key={movie?.id} className="each-movie">
+                    movieListData?.map((movie) => (<SwiperSlide key={movie?.id}>
                         <MovieCard movieData={movie} />
                     </SwiperSlide>))
                 }

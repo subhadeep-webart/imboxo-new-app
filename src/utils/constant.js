@@ -25,3 +25,12 @@ export const COMMON_HEADER_NAV_ITEMS = [
     { label: "Film Makers", path: "#" },
     { label: "Community", path: "#" },
 ];
+
+/* CREATOR PROFILE NAVIGATION */
+export const CREATOR_PROFILE_NAVIGATION = [
+    { label: "Dashboard", path: "/" },
+    { label: "Edit Profile", path:"/"},
+    { label: "My Movie", path: "/" },
+    { label: "Upload Movie", path: "/" },
+    { label: "Awards", path: "/" }
+]

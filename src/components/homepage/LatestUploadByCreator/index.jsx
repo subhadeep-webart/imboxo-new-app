@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useRef } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 const LatestUploadByCreator = ({ movieData }) => {
-    console.log("Latest Release Movie Data=====================>", movieData);
     const prevRef = useRef(null);
     const nextRef = useRef(null);
     return (
@@ -56,7 +55,7 @@ const LatestUploadByCreator = ({ movieData }) => {
                             swiper.params.navigation.nextEl = nextRef.current;
                         }}
                         className="latest-movies-wrapper"
-                        style={{ paddingLeft: "20px !important", width: "84%",marginRight: "-44px" }}
+                        style={{ paddingLeft: "20px !important" }}
                         loop={true}
                     >
                         {

@@ -3,6 +3,7 @@
 import axiosInstance from "@/service/api/axiosInstance";
 import { API_ENDPOINTS } from "@/service/api/endpoint";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export const login = async (payload) => {
   try {
@@ -59,7 +60,6 @@ export const login = async (payload) => {
     //   maxAge: 60 * 60 * 24 * 7,
     //   sameSite: "strict",
     // });
-
     return {
       success: true,
       roles: roles,

@@ -1,4 +1,3 @@
-import AnimatedSection from "@/components/common/AnimatedSection";
 import CommonBanner from "@/components/common/CommonBanner";
 import MovieHeader from "@/components/movies/MovieHeader";
 import MovieListContainer from "@/components/movies/MovieListContainer";
@@ -9,20 +8,10 @@ const Movies = async () => {
 
     return (
         <section>
-            <AnimatedSection>
-                <CommonBanner backgroundImage={"/assets/images/Movie_listing.webp"} />
-            </AnimatedSection>
+            <CommonBanner backgroundImage={"/assets/images/Movie_listing.webp"} />
             <div className="container">
-                {/* Fade-in movie header */}
-                <AnimatedSection>
-                     <MovieHeader movieHeaderTextName={"Browse All Movies"} />
-                </AnimatedSection>
-
-                {/* Fade-in movie list container */}
-                <AnimatedSection>
-                    <MovieListContainer allMovies={movies?.data || []} />
-                </AnimatedSection>
-                
+                <MovieHeader movieHeaderTextName={"Browse All Movies"} />
+                <MovieListContainer allMovies={movies?.data || []} />
             </div>
         </section>
     );

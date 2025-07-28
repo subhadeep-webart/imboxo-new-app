@@ -10,6 +10,7 @@ import HboMovie from "@/components/homepage/HboMovie";
 import MovieViewerSection from "@/components/homepage/MovieViewerSection";
 import Visionaries from "@/components/homepage/Visionaries";
 import EachMovieSection from "@/components/homepage/EachMovieSection";
+import AnimatedSection from "@/components/common/AnimatedSection";
 
 const Home = async () => {
   const movieByCategories = await getMovieByCategory();
@@ -20,7 +21,6 @@ const Home = async () => {
 
   return (
     <>
-      {/* Home Banner Section */}
       <HomeBanner />
       {/* Latest Upload by creator section */}
       <LatestUploadByCreator movieData={movieByCategories?.latest_releases || []} />

@@ -7,7 +7,7 @@ const MovieCard = ({ movieData }) => {
         <Link href={`/movie-details/${slug}`}>
             <div className="each-movie">
                 <div className="movie-image">
-                    <Image src={thumbnail} alt={`${name}-image`} fill className="rounded-2xl" />
+                    <Image src={thumbnail} alt={`${name}-image`} fill className="rounded-2xl"/>
                 </div>
                 <div className="movie-info">
                     <div className="movie-details">

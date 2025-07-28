@@ -1,6 +1,7 @@
 "use client"
-import { Autoplay, EffectFade } from "swiper/modules"
+import { Autoplay, Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/navigation";
 import Image from "next/image";
 
 const CapturedSection = () => {
@@ -18,14 +19,15 @@ const CapturedSection = () => {
             </div>
             <div className="w-full">
                 <Swiper
-                    modules={[Autoplay]}
-                    spaceBetween={12}
+                    modules={[Autoplay, Navigation]}
+                    spaceBetween={24}
                     slidesPerGroup={6}
                     slidesPerView={6}
                     loop={true}
-                    speed={3000}
-                    autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+                    speed={2000}
+                    // autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
                     className="logo-wrapper"
+                    navigation={true}
                 >
                     <SwiperSlide className="logo-list">
                         <Image src="/assets/images/logo-1.png" width={128} height={62} alt="Logo 1" />
@@ -57,10 +59,10 @@ const CapturedSection = () => {
                     <SwiperSlide className="logo-list">
                         <Image src="/assets/images/logo-2.png" width={128} height={62} alt="Logo 2" />
                     </SwiperSlide>
-                     <SwiperSlide className="logo-list">
+                    <SwiperSlide className="logo-list">
                         <Image src="/assets/images/logo-2.png" width={128} height={62} alt="Logo 2" />
                     </SwiperSlide>
-                     <SwiperSlide className="logo-list">
+                    <SwiperSlide className="logo-list">
                         <Image src="/assets/images/logo-2.png" width={128} height={62} alt="Logo 2" />
                     </SwiperSlide>
                 </Swiper>

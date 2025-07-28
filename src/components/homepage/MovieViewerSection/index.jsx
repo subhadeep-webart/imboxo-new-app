@@ -12,7 +12,7 @@ const MovieViewerSection = () => {
         <section className="movie-slider-wrapper">
             <div className="container">
                 <Swiper modules={[Navigation,EffectFade]}
-                    spaceBetween={24}
+                    // spaceBetween={24}
                     slidesPerView={1}
                     loop={true}
                     autoplay={{
@@ -20,7 +20,7 @@ const MovieViewerSection = () => {
                         disableOnInteraction: false,
                         pauseOnMouseEnter: true
                     }}
-                    effect="fade" // <--- enable fade effect
+                    effect="fade"
                     fadeEffect={{ crossFade: true }} // optional: smooth cross fade
                     speed={3000}
                     navigation={{
@@ -121,7 +121,6 @@ const MovieViewerSection = () => {
                     <SwiperSlide className="movie-slider">
                         <div className="banner-content">
                             <ul className="tags-wrapper">
-                                <li className="each-tag">Action</li>
                                 <li className="each-tag">Drama</li>
                                 <li className="each-tag">Sci-Fi</li>
                                 <li className="each-tag">Superhero</li>

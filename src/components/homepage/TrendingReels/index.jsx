@@ -2,7 +2,7 @@
 import { EYE_ICON } from "@/utils/icons"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay } from "swiper/modules"
+import { Autoplay, Navigation } from "swiper/modules"
 const TrendingReels = () => {
     return (
         <section className="trending-reels-section">
@@ -17,13 +17,14 @@ const TrendingReels = () => {
                 </div>
             </div>
             <div className="w-full">
-                <Swiper modules={[Autoplay]}
+                <Swiper modules={[Autoplay,Navigation]}
                     spaceBetween={30}
                     slidesPerView={6}
                     slidesPerGroup={6}
                     loop={true}
-                    autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+                    autoplay={{ delay: 4000, disableOnInteraction: true, pauseOnMouseEnter: true }}
                     speed={3000}
+                    navigation={true}
                     className="reels-wrapper">
                     <SwiperSlide className="each-reel">
                         <div className="reel-thumb">
