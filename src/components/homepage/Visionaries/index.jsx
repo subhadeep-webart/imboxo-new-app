@@ -35,196 +35,180 @@ const Visionaries = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="w-full" style={{padding:"40px 0px"}}>
-                        <Swiper
-                            modules={[Navigation]}
-                            spaceBetween={30}
-                            slidesPerView={5}
-                            navigation={{
-                                prevEl: prevRef.current,
-                                nextEl: nextRef.current,
-                            }}
-                            onBeforeInit={(swiper) => {
-                                swiper.params.navigation.prevEl = prevRef.current;
-                                swiper.params.navigation.nextEl = nextRef.current;
-                            }}
-                            loop={true}
-                            autoplay={true}
-                            className="visionaries-wrapper"
-                            style={{ paddingTop: "80px !important" }}
-                        >
-                            <SwiperSlide>
-                                <div className={`each-visionary visionary-bigger`} >
-                                    <div className={`visionary-thumb-bigger visionary-thumb`}>
-                                        <Image src="/assets/images/visionary-1.png" alt="" fill />
-                                    </div>
-                                    <div className="visionary-info">
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </div>
-                                    <p className="visionary-description">
-                                        Worem ipsum dolor sit amet, consectet adipiscing elit.
-                                    </p>
-                                    <div className="visionary-socials">
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <div className="rating">
-                                            <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
-                                            <span>8.8</span>
-                                        </div>
-                                    </div>
-                                    {/* indicator */}
-                                    <>
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </>
+                    <Swiper
+                        modules={[Navigation]}
+                        spaceBetween={30}
+                        slidesPerView={5}
+                        navigation={{
+                            prevEl: prevRef.current,
+                            nextEl: nextRef.current,
+                        }}
+                        onBeforeInit={(swiper) => {
+                            swiper.params.navigation.prevEl = prevRef.current;
+                            swiper.params.navigation.nextEl = nextRef.current;
+                        }}
+                        loop={true}
+                        autoplay={true}
+                        className="visionaries-wrapper"
+                        style={{ paddingTop: "80px !important",height:"410px !important"}}
+                    >
+                        <SwiperSlide>
+                            <div className={`each-visionary visionary-bigger`} >
+                                <div className={`visionary-thumb-bigger visionary-thumb`}>
+                                    <Image src="/assets/images/visionary-1.png" alt="" fill />
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={`each-visionary visionary-bigger`} >
-                                    <div className={`visionary-thumb-bigger visionary-thumb`}>
-                                        <Image src="/assets/images/visionary-1.png" alt="" fill />
-                                    </div>
-                                    <div className="visionary-info">
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </div>
-                                    <p className="visionary-description">
-                                        Worem ipsum dolor sit amet, consectet adipiscing elit.
-                                    </p>
-                                    <div className="visionary-socials">
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <div className="rating">
-                                            <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
-                                            <span>8.8</span>
-                                        </div>
-                                    </div>
-                                    {/* indicator */}
-                                    <>
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </>
+                                <div className="visionary-info">
+                                    <h4 className="visionary-name">Jordon Sharma</h4>
+                                    <a className="visionary-role">Follow</a>
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={`each-visionary visionary-bigger`} >
-                                    <div className={`visionary-thumb-bigger visionary-thumb`}>
-                                        <Image src="/assets/images/visionary-1.png" alt="" fill />
+                                <p className="visionary-description">
+                                    Worem ipsum dolor sit amet, consectet adipiscing elit.
+                                </p>
+                                <div className="visionary-socials">
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <div className="rating">
+                                        <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
+                                        <span>8.8</span>
                                     </div>
-                                    <div className="visionary-info">
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </div>
-                                    <p className="visionary-description">
-                                        Worem ipsum dolor sit amet, consectet adipiscing elit.
-                                    </p>
-                                    <div className="visionary-socials">
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <div className="rating">
-                                            <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
-                                            <span>8.8</span>
-                                        </div>
-                                    </div>
-                                    {/* indicator */}
-                                    <>
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </>
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={`each-visionary visionary-bigger`} >
-                                    <div className={`visionary-thumb-bigger visionary-thumb`}>
-                                        <Image src="/assets/images/visionary-1.png" alt="" fill />
-                                    </div>
-                                    <div className="visionary-info">
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </div>
-                                    <p className="visionary-description">
-                                        Worem ipsum dolor sit amet, consectet adipiscing elit.
-                                    </p>
-                                    <div className="visionary-socials">
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <div className="rating">
-                                            <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
-                                            <span>8.8</span>
-                                        </div>
-                                    </div>
-                                    {/* indicator */}
-                                    <>
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </>
+                                <h4 className="visionary-name visionary-name-small">Jordon Sharma</h4>
+                                <a className="visionary-role visionary-role-small">Follow</a>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className={`each-visionary visionary-bigger`} >
+                                <div className={`visionary-thumb-bigger visionary-thumb`}>
+                                    <Image src="/assets/images/visionary-1.png" alt="" fill />
                                 </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={`each-visionary visionary-bigger`} >
-                                    <div className={`visionary-thumb-bigger visionary-thumb`}>
-                                        <Image src="/assets/images/visionary-1.png" alt="" fill />
-                                    </div>
-                                    <div className="visionary-info">
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </div>
-                                    <p className="visionary-description">
-                                        Worem ipsum dolor sit amet, consectet adipiscing elit.
-                                    </p>
-                                    <div className="visionary-socials">
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
-                                        </a>
-                                        <a className="social-link">
-                                            <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
-                                        </a>
-                                        <div className="rating">
-                                            <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
-                                            <span>8.8</span>
-                                        </div>
-                                    </div>
-                                    {/* indicator */}
-                                    <>
-                                        <h4 className="visionary-name">Jordon Sharma</h4>
-                                        <a className="visionary-role">Follow</a>
-                                    </>
+                                <div className="visionary-info">
+                                    <h4 className="visionary-name">Jordon Sharma</h4>
+                                    <a className="visionary-role">Follow</a>
                                 </div>
-                            </SwiperSlide>
-                        </Swiper>
-                    </div>
+                                <p className="visionary-description">
+                                    Worem ipsum dolor sit amet, consectet adipiscing elit.
+                                </p>
+                                <div className="visionary-socials">
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <div className="rating">
+                                        <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
+                                        <span>8.8</span>
+                                    </div>
+                                </div>
+                                {/* indicator */}
+                                <h4 className="visionary-name visionary-name-small">Jordon Sharma</h4>
+                                <a className="visionary-role visionary-role-small">Follow</a>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className={`each-visionary visionary-bigger`} >
+                                <div className={`visionary-thumb-bigger visionary-thumb`}>
+                                    <Image src="/assets/images/visionary-1.png" alt="" fill />
+                                </div>
+                                <div className="visionary-info">
+                                    <h4 className="visionary-name">Jordon Sharma</h4>
+                                    <a className="visionary-role">Follow</a>
+                                </div>
+                                <p className="visionary-description">
+                                    Worem ipsum dolor sit amet, consectet adipiscing elit.
+                                </p>
+                                <div className="visionary-socials">
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <div className="rating">
+                                        <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
+                                        <span>8.8</span>
+                                    </div>
+                                </div>
+                                <h4 className="visionary-name visionary-name-small">Jordon Sharma</h4>
+                                <a className="visionary-role visionary-role-small">Follow</a>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className={`each-visionary visionary-bigger`} >
+                                <div className={`visionary-thumb-bigger visionary-thumb`}>
+                                    <Image src="/assets/images/visionary-1.png" alt="" fill />
+                                </div>
+                                <div className="visionary-info">
+                                    <h4 className="visionary-name">Jordon Sharma</h4>
+                                    <a className="visionary-role">Follow</a>
+                                </div>
+                                <p className="visionary-description">
+                                    Worem ipsum dolor sit amet, consectet adipiscing elit.
+                                </p>
+                                <div className="visionary-socials">
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <div className="rating">
+                                        <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
+                                        <span>8.8</span>
+                                    </div>
+                                </div>
+                                <h4 className="visionary-name visionary-name-small">Jordon Sharma</h4>
+                                <a className="visionary-role visionary-role-small">Follow</a>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className={`each-visionary visionary-bigger`} >
+                                <div className={`visionary-thumb-bigger visionary-thumb`}>
+                                    <Image src="/assets/images/visionary-1.png" alt="" fill />
+                                </div>
+                                <div className="visionary-info">
+                                    <h4 className="visionary-name">Jordon Sharma</h4>
+                                    <a className="visionary-role">Follow</a>
+                                </div>
+                                <p className="visionary-description">
+                                    Worem ipsum dolor sit amet, consectet adipiscing elit.
+                                </p>
+                                <div className="visionary-socials">
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/twitter.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/facebook.svg" alt="" width={16} height={20} />
+                                    </a>
+                                    <a className="social-link">
+                                        <Image src="/assets/icons/instagram.svg" alt="" width={20} height={20} />
+                                    </a>
+                                    <div className="rating">
+                                        <Image src="/assets/icons/star-full.svg" alt="" width={16} height={16} />
+                                        <span>8.8</span>
+                                    </div>
+                                </div>
+                                <h4 className="visionary-name visionary-name-small">Jordon Sharma</h4>
+                                <a className="visionary-role visionary-role-small">Follow</a>
+                            </div>
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </div>
         </section>

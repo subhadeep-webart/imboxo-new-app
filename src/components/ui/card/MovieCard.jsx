@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { formatDate } from "@/utils/helper";
 const MovieCard = ({ movieData }) => {
     console.log("Movie Data======================>lifeUi", movieData);
     const { name, duration, release_date, thumbnail, slug } = movieData || {};
@@ -7,7 +8,7 @@ const MovieCard = ({ movieData }) => {
         <Link href={`/movie-details/${slug}`}>
             <div className="each-movie">
                 <div className="movie-image">
-                    <Image src={thumbnail} alt={`${name}-image`} fill className="rounded-2xl"/>
+                    <Image src={thumbnail} alt={`${name}-image`} fill className="rounded-2xl" />
                 </div>
                 <div className="movie-info">
                     <div className="movie-details">
@@ -22,7 +23,7 @@ const MovieCard = ({ movieData }) => {
                                 />
                                 <span>8.8</span>
                             </div>
-                            <span className="year">{release_date}</span>
+                            <span className="year">{formatDate(release_date)}</span>
                             <span className="duration">{duration}</span>
                         </div>
                     </div>

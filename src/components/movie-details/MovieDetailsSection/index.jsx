@@ -1,9 +1,10 @@
 import Image from "next/image";
 import styles from "./moviedetails.module.scss";
 import { WISHLIST_ICON } from "@/utils/icons";
+import { formatDate } from "@/utils/helper";
 
 const MovieDetailsSection = ({ movieDetails }) => {
-    const { name, poster, description, genre = [], director,release_date,duration } = movieDetails;
+    const { name, poster, description, genre = [], director, release_date, duration } = movieDetails;
     console.log("Movie Details====12", genre);
     return (
         <section className={styles.movie_details_wrapper}>
@@ -30,7 +31,7 @@ const MovieDetailsSection = ({ movieDetails }) => {
                                 />
                                 <span className="text-white">8.8</span>
                             </div>
-                            <span className="w-36 text-white">{release_date}</span>
+                            <span className="w-36 text-white">{formatDate(release_date)}</span>
                             <span className="w-36 text-white">{duration}</span>
                         </div>
                     </div>
@@ -42,7 +43,7 @@ const MovieDetailsSection = ({ movieDetails }) => {
                         </ul>
                     </div>
                 </div>
-                <div className="w-full flex justify-between items-end">
+                <div className="w-full flex justify-between items-end z-[999]">
                     <div className="flex gap-8 justify-start items-start w-[80%]">
                         <div>
                             <p className="text-purple">Creator</p>
