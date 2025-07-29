@@ -1,6 +1,6 @@
 "use client"
 import { verifyEmailValiation } from "@/utils/formValidationSchema";
-import Styles from "../authform.module.scss";
+import Styles from "../../form.module.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import useResendOtpHandler from "@/hooks/useResendOtpHandler";

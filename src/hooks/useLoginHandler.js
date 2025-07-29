@@ -22,17 +22,7 @@ const useLoginHandler=()=>{
             if (result?.success) {
                 toast.success(result?.message);
                 reset();
-                router.push("/profile/creator/upload-movie")
-                // if(result?.roles==='Clinic'){
-                //     router.push('/clinic/all-schedule');
-                // }else{
-                //     if(redirectUrl){
-                //         router.push(redirectUrl);
-                //         localStorage.removeItem("redirectUrl");
-                //     }else{
-                //         router.push('/')
-                //     }
-                // }
+                router.push("/profile");
             } else {
                 toast.error(result?.message ?? "Something went wrong");
             }

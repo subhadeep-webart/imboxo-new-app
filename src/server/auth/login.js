@@ -10,67 +10,41 @@ export const login = async (payload) => {
     const response = await axiosInstance.post(API_ENDPOINTS.LOGIN, payload, {
       skipAuth: true,
     });
-    console.log("Login Response======================>", response?.data);
+    
     if (!response?.data?.success) {
       throw new Error(response.data.message ?? "Login Failed");
     }
     console.log("Login Response======================>", response?.data);
-    const token = response?.data?.data?.token;
-    const roles = response?.data?.data?.user?.roles[0]?.name;
-
-    if (roles === 'Clinic') {
-
-    }
-
+    const token = response?.data?.token;
+    const user_id = response?.data?.data?.user_id;
     const cookieStore = await cookies();
 
-    console.log("token", token);
+    console.log("token", user_id);
 
-    // if (roles === 'Clinic') {
-    //   cookieStore.set("clinic-token", token, {
-    //     httpOnly: true,
-    //     secure: process.env.NODE_ENV === "production",
-    //     path: "/",
-    //     maxAge: 60 * 60 * 24 * 7,
-    //     sameSite: "strict",
-    //   });
+    cookieStore.set("_token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+      sameSite: "strict",
+    });
 
-    //   cookieStore.set("clinic_id", clinic_id, {
-    //     httpOnly: true,
-    //     secure: process.env.NODE_ENV === "production",
-    //     path: "/",
-    //     maxAge: 60 * 60 * 24 * 7,
-    //     sameSite: "strict",
-    //   });
-    // } else {
-    //   cookieStore.set("customer-token", token, {
-    //     httpOnly: true,
-    //     secure: process.env.NODE_ENV === "production",
-    //     path: "/",
-    //     maxAge: 60 * 60 * 24 * 7,
-    //     sameSite: "strict",
-    //   });
-    // }
+    cookieStore.set("_userId", user_id, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 7,
+      sameSite: "strict",
+    });
 
-
-    // cookieStore.set("roles", roles, {
-    //   httpOnly: true,
-    //   secure: process.env.NODE_ENV === "production",
-    //   path: "/",
-    //   maxAge: 60 * 60 * 24 * 7,
-    //   sameSite: "strict",
-    // });
     return {
       success: true,
-      roles: roles,
       message: response?.data?.message ?? "Login Successfull",
     };
   } catch (error) {
-    let message = "Resend Otp Failed";
+    let message = "Login Failed";
     if (Array.isArray(error?.response?.data?.errors)) {
       const errorArray = error.response.data.errors;
-
-      // Extract and join messages from each object
       message = errorArray
         .map(err => Object.values(err).join(" ")) // or `.join(", ")` if multiple keys per object
         .join(" & ");

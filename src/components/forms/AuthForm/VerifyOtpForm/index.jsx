@@ -1,6 +1,6 @@
 "use client"
 import OtpInput from 'react-otp-input';
-import Styles from "../authform.module.scss";
+import styles from "../../form.module.scss";
 import { useState, useEffect } from 'react';
 import useVerifyEmailHandler from '@/hooks/useVerifyEmailHandler';
 import useResendOtpHandler from '@/hooks/useResendOtpHandler';

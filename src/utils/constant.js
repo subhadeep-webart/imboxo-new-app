@@ -28,9 +28,15 @@ export const COMMON_HEADER_NAV_ITEMS = [
 
 /* CREATOR PROFILE NAVIGATION */
 export const CREATOR_PROFILE_NAVIGATION = [
-    { label: "Dashboard", path: "/" },
-    { label: "Edit Profile", path:"/"},
-    { label: "My Movie", path: "/" },
-    { label: "Upload Movie", path: "/" },
-    { label: "Awards", path: "/" }
+    { label: "Dashboard", path: "/profile/dashboard" },
+    { label: "Edit Profile", path: "/profile" },
+    { label: "My Movie", path: "/profile/my-movie" },
+    { label: "Upload Movie", path: "/profile/upload-movie" },
+    { label: "Awards", path: "/profile/awards" }
+]
+/* USER PROFILE NAVIGATION */
+export const USER_PROFILE_NAVIGATION = [
+    { label: "Edit Profile", path: "/profile" },
+    { label: "My Movie", path: "/profile/my-movie" },
+    { label: "My List", path: "/profile/my-list" }
 ]

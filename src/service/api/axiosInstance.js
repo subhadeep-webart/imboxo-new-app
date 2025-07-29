@@ -17,17 +17,9 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   async (config) => {
     config.headers = config.headers || {};
+    const cookieStore = await cookies();
+    const token = cookieStore.get("_token")?.value;
 
-    const cookieStore = cookies();
-    const roles = cookieStore.get("roles")?.value;
-
-    let token;
-
-    if (roles === "Customer") {
-      token = cookieStore.get("customer-token")?.value;
-    } else if (roles === "Clinic") {
-      token = cookieStore.get("clinic-token")?.value;
-    }
 
     if (!config.skipAuth) {
       if (token) {
@@ -52,11 +44,11 @@ axiosInstance.interceptors.response.use(
   async (error) => {
     if (error.response?.status === 401) {
       try {
-        const cookieStore = cookies();
-        cookieStore.getAll().forEach((cookie) => {
-          cookieStore.delete(cookie.name);
-        });
-        redirect("/");
+        // const cookieStore = await cookies();
+        // cookieStore.getAll().forEach((cookie) => {
+        //   cookieStore.delete(cookie.name);
+        // });
+        // redirect("/");
       } catch (err) {
         console.error("Error handling 401 response:", err);
       }

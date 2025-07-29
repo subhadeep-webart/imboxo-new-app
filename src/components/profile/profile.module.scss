@@ -1,7 +1,6 @@
 .profile_banner_section {
     height: 364px;
-    background: linear-gradient(174.53deg, rgba(0, 0, 0, 0) -2.51%, rgba(0, 0, 0, 0.4) 99.12%),
-        url(/assets/images/Profile_bakground_image.webp) no-repeat center center;
+    background: linear-gradient(174.53deg, rgba(0, 0, 0, 0) -2.51%, rgba(0, 0, 0, 0.4) 99.12%), no-repeat center center;
 
     background-size: cover;
     // padding-block: 115px;
@@ -48,7 +47,7 @@
     justify-content: start;
     align-items: center;
     padding: 4px;
-    gap: 8px;
+    gap: 12px;
 }
 
 .profile_nav_menu {
@@ -65,6 +64,11 @@
         transform: scale(1.02);
         color: #9875F6;
     }
+}
+
+.profile_nav_active {
+    color: #9875F6;
+    border-bottom: 2px solid #9875F6
 }
 
 .profile_header_container {
@@ -89,4 +93,9 @@
         letter-spacing: 0%;
         color: #9D9D9D;
     }
+}
+
+.edit_profile_form_container{
+    width: 100%;
+    padding-block: 44px;
 }

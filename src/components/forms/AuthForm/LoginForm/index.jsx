@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../authform.module.scss";
+import styles from "../../form.module.scss";
 import { useState } from "react";
 import { GOOGLE_ICON, PASSWORD_EYE_ICON } from "@/utils/icons";
 import Image from "next/image";

@@ -5,3 +5,4 @@ export {default as EMAIL_ICON} from "@/assets/icons/Email_icon.svg";
 export {default as PASSWORD_KEY_ICON} from "@/assets/icons/Password_key.svg";
 export {default as GOOGLE_ICON} from "@/assets/icons/Google_icon.svg";
 export {default as UPLOAD_ICON } from "@/assets/icons/Upload_icon.svg";
+export {default as DOWN_ARROW_ICON} from "@/assets/icons/Down_arrow.svg";

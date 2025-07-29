@@ -11,19 +11,17 @@ export const verifyEmail = async (payload) => {
             skipAuth: true,
         });
         if (!response?.data?.success) {
-            throw new Error(response.data.message ?? "Otp Verification Failed");
+            throw new Error(response.data.message ?? "Email Verification Failed");
         }
 
         return {
             success: true,
-            message: response?.data?.message ?? "Otp Verified Successfully",
+            message: response?.data?.message ?? "Email Verified Successfully",
         };
     } catch (error) {
-        let message = "Resend Otp Failed";
+        let message = "Email Verification Failed";
         if (Array.isArray(error?.response?.data?.errors)) {
             const errorArray = error.response.data.errors;
-
-            // Extract and join messages from each object
             message = errorArray
                 .map(err => Object.values(err).join(" ")) // or `.join(", ")` if multiple keys per object
                 .join(" & ");

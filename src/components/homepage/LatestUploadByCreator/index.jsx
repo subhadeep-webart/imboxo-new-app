@@ -4,9 +4,21 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { useRef } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
+
 const LatestUploadByCreator = ({ movieData }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+
+    // --- ✅ Adjust movieData length for full groups ---
+    const totalSlides = movieData?.length || 0;
+    const remainder = totalSlides % 3;
+    const slidesToAdd = remainder === 0 ? 0 : 3 - remainder;
+
+    const finalSlides = [
+        ...movieData,
+        ...movieData.slice(0, slidesToAdd) // clone first few to fill last group
+    ];
+
     return (
         <section className="latest-section">
             <div className="container">
@@ -37,6 +49,7 @@ const LatestUploadByCreator = ({ movieData }) => {
                             </button>
                         </div>
                     </div>
+
                     <Swiper
                         modules={[Navigation, Autoplay]}
                         slidesPerGroup={3}
@@ -55,17 +68,19 @@ const LatestUploadByCreator = ({ movieData }) => {
                             swiper.params.navigation.nextEl = nextRef.current;
                         }}
                         className="latest-movies-wrapper"
-                        style={{ paddingLeft: "20px !important" }}
+                        style={{ paddingLeft: "20px" }}
                         loop={true}
                     >
-                        {
-                            movieData?.map((movieData) => (<SwiperSlide key={movieData?.id} className="each-movie"><MovieCard movieData={movieData} /></SwiperSlide>))
-                        }
+                        {finalSlides.map((movie, index) => (
+                            <SwiperSlide key={`latest-upload-movie-${index}`} className="each-movie">
+                                <MovieCard movieData={movie} />
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
                 </div>
             </div>
-        </section >
-    )
-}
+        </section>
+    );
+};
 
 export default LatestUploadByCreator;

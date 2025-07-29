@@ -10,5 +10,10 @@ export const API_ENDPOINTS={
     GET_MOVIE_DETAILS:"/movie-details",
     GET_MOVIE_S3:"/fetch-file-url-from-S3",
     GET_ALL_GENRES:"/genres",
-    GET_ALL_MOVIES_BY_GENRE:"/movie-filter"
+    GET_ALL_MOVIES_BY_GENRE:"/movie-filter",
+    GET_USER_DETAILS_BY_ID : "/user-details",
+    USER_UPDATE:"/user-update",
+    GET_ALL_COUNTRIES:"/country",
+    GET_STATE_BY_COUNTRY_ID:"/state",
+    GET_CITY_BY_STATE_ID:"/city"
 }
