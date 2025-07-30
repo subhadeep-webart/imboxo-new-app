@@ -5,7 +5,7 @@
  * @params => none
  * @returns => handleSignup function call this function when submit the clinic signup form and a loading state indicate the request and response time
  */
-
+"use client";
 import { verifyEmail } from "@/server/auth/verifyEmail";
 import { useRouter } from "next/router";
 import { useState } from "react";
