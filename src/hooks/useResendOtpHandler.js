@@ -14,7 +14,11 @@ import toast from "react-hot-toast";
 const useResendOtpHandler = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
-  const handleResendOtp = async (resendOtpDetails, isRedirect = false) => {
+  const handleResendOtp = async (
+    resendOtpDetails,
+    isForgotPassword,
+    isRedirect = false
+  ) => {
     try {
       setIsLoading(true);
       const result = await resendOtp(resendOtpDetails);
@@ -22,6 +26,7 @@ const useResendOtpHandler = () => {
         toast.success(result?.message ?? "Otp Send To Your Email");
         if (isRedirect) {
           sessionStorage.setItem("emailForOTP", resendOtpDetails.email);
+          sessionStorage.setItem("isFogotPassword", isForgotPassword);
           router.push("/verify-otp");
         }
       } else {

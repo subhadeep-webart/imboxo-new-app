@@ -21,9 +21,14 @@ const useVerifyEmailHandler = () => {
       setIsLoading(true);
       const result = await verifyEmail(emailVerificationDetails);
       if (result?.success) {
-        sessionStorage.clear();
-        toast.success(result?.message ?? "Email Verification Completed");
-        router.push("/login");
+        if (sessionStorage.getItem("isFogotPassword")) {
+          sessionStorage.clear();
+          router.push("/reset-password");
+        } else {
+          sessionStorage.clear();
+          toast.success(result?.message ?? "Email Verification Completed");
+          router.push("/login");
+        }
       } else {
         toast.error(result?.message ?? "Email verification Failed");
       }

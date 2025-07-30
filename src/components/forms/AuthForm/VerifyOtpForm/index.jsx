@@ -33,7 +33,7 @@ const VerifyOtpForm = () => {
   };
 
   const handleResendOtpHandler = () => {
-    handleResendOtp({ email });
+    handleResendOtp({ email }, false, false);
   };
 
   return (
