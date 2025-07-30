@@ -6,7 +6,7 @@ const ProfileInfo = ({ profileNavMenu, name, userName, profile_img }) => {
     <div className={styles.profile_info_wrapper}>
       <div className={styles.profile_image}>
         <Image
-          src={profile_img ? profile_img : "https://images.unsplash.com/broken"}
+          src={profile_img ? profile_img : "/assets/images/fallback.png"}
           fill
           className="object-cover"
         />

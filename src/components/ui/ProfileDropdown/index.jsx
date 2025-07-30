@@ -26,7 +26,7 @@ const ProfileDropdown = ({ profile_img }) => {
           isBordered
           as="button"
           className="transition-transform object-cover !bg-gray-900"
-          src={profile_img ? profile_img : "https://images.unsplash.com/broken"}
+          src={profile_img ? profile_img : "/assets/images/fallback.png"}
         />
       </DropdownTrigger>
       <DropdownMenu
