@@ -22,7 +22,7 @@ const useVerifyEmailHandler = () => {
       const result = await verifyEmail(emailVerificationDetails);
       if (result?.success) {
         if (sessionStorage.getItem("isFogotPassword")) {
-          sessionStorage.clearItem("isForgotPassword");
+          sessionStorage.removeItem("isForgotPassword");
           router.push("/reset-password");
         } else {
           sessionStorage.clear();
