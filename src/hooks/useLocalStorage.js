@@ -1,26 +1,33 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 
 function useLocalStorage(key, initialValue) {
-    const [value, setValue] = useState(() => {
-        try {
-            const item = localStorage.getItem(key);
-            return item ? JSON.parse(item) : initialValue;
-        } catch (error) {
-            console.error("Error reading localStorage key:", key, error);
-            return initialValue;
-        }
-    });
+  const [value, setValue] = useState(initialValue);
 
-    useEffect(() => {
-        try {
-            localStorage.setItem(key, JSON.stringify(value));
-        } catch (error) {
-            console.error("Error setting localStorage key:", key, error);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        const item = localStorage.getItem(key);
+        if (item) {
+          setValue(JSON.parse(item));
         }
-    }, [key, value]);
+      } catch (error) {
+        console.error("Error reading localStorage key:", key, error);
+      }
+    }
+  }, [key]);
 
-    return [value, setValue];
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        console.error("Error setting localStorage key:", key, error);
+      }
+    }
+  }, [key, value]);
+
+  return [value, setValue];
 }
 
 export default useLocalStorage;
