@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import useVerifyEmailHandler from "@/hooks/useVerifyEmailHandler";
 import useResendOtpHandler from "@/hooks/useResendOtpHandler";
 import toast from "react-hot-toast";
+import Loader from "@/components/ui/Loader";
 
 const VerifyOtpForm = () => {
   const { handleVerifyEmail, isLoading } = useVerifyEmailHandler();
@@ -71,7 +72,7 @@ const VerifyOtpForm = () => {
         className={Styles.submitButton}
         disabled={isLoading}
       >
-        Verify OTP
+        {isLoading ? <Loader /> : "Verify OTP"}
       </button>
     </form>
   );
