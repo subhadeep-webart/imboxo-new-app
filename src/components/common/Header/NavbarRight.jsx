@@ -4,7 +4,7 @@ import ProfileDropdown from "@/components/ui/ProfileDropdown";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import Link from "next/link";
 const NavbarRight = ({profile_img}) => {
-    const [isLoggedIn] = useLocalStorage("isLoggedIn", false);
+    const [isLoggedIn] = useLocalStorage("isLoggedIn");
     return (
         <div className="navbar__right">
             {
