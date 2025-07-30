@@ -11,7 +11,15 @@ const NavbarRight = ({ profile_img }) => {
     if (typeof window !== "undefined") {
       try {
         const stored = localStorage.getItem("isLoggedIn");
-        setIsLoggedIn(stored ? JSON.parse(stored) : false);
+
+        if (stored === "true") {
+          setIsLoggedIn(true);
+        } else if (stored === "false") {
+          setIsLoggedIn(false);
+        } else {
+          setIsLoggedIn(false); // default if null/undefined/invalid
+        }
+
       } catch (error) {
         console.error("Error reading isLoggedIn from localStorage", error);
         setIsLoggedIn(false);
