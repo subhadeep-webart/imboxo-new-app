@@ -1,3 +1,4 @@
+"use client";
 import { getAllStatesByCountry } from "@/server/common/getAllStatesByCountry";
 import { useState, useEffect } from "react";
 
