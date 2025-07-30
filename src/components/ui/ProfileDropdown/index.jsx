@@ -11,8 +11,8 @@ import {
 import { Avatar } from "@heroui/react";
 import { LogOut } from "lucide-react";
 
-const ProfileDropdown = ({profile_img}) => {
-    const handleLogout  = useLogoutHandler();
+const ProfileDropdown = ({ profile_img }) => {
+    const handleLogout = useLogoutHandler();
 
     const handleUserLogout = () => {
         console.log("Logout call");
@@ -24,7 +24,7 @@ const ProfileDropdown = ({profile_img}) => {
                 <Avatar
                     isBordered
                     as="button"
-                    className="transition-transform"
+                    className="transition-transform object-cover !bg-gray-900"
                     src={profile_img ? profile_img : "https://images.unsplash.com/broken"}
                 />
             </DropdownTrigger>
