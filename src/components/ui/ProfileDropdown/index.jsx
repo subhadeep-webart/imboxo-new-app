@@ -32,11 +32,11 @@ const ProfileDropdown = ({ profile_img }) => {
             <DropdownMenu aria-label="Profile Actions" className="bg-black !px-4 !py-2 !rounded-lg">
                 {
                     PROFILE_DROPDOWN_MENU_ITEM.map((dropdownMenu) => (
-                        <Link href={dropdownMenu.link} key={dropdownMenu.key}>
-                            <DropdownItem startContent={dropdownMenu.startContent} className="text-white !py-2 !px-2">
-                                {dropdownMenu?.label}
-                            </DropdownItem>
-                        </Link>
+                        <DropdownItem startContent={dropdownMenu.startContent} className="text-white !py-2 !px-2">
+                            <Link href={dropdownMenu.link} className="w-full h-full block">
+                                {dropdownMenu.label}
+                            </Link>
+                        </DropdownItem>
                     ))
                 }
                 <DropdownItem key="logout" color="danger" startContent={<LogOut size={20} />} className="text-white !py-2 !px-2" onClick={handleUserLogout}>
