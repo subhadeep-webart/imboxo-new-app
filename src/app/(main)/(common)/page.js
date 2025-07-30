@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getMovies } from "@/server/movies/getMovies";
 import { getMovieByCategory } from "@/server/movies/getMovieByCategory";
 import TopMoviesOfWeek from "@/components/homepage/TopMoviesOfWeek";
