@@ -1,0 +1,42 @@
+@import "tailwindcss";
+/* HeroUI plugin include */
+@plugin "../heroui.config.js";
+/* @config "../../tailwind.config.js"; */
+/* HeroUI ke themes ko scan karne ke liye */
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+
+/* Dark mode ke liye */
+@custom-variant dark (&:is(.dark *));
+
+@layer utilities {
+    .full_screen_caraousel {
+        @apply relative left-0 w-[100vw];
+    }
+}
+
+/* Tailwind-compatible global CSS */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, #7366ff, #8e54e9);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to right, #5a4cff, #7a3fe0);
+}

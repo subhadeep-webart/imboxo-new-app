@@ -39,6 +39,7 @@ export const login = async (payload) => {
 
     return {
       success: true,
+      details:response?.data,
       message: response?.data?.message ?? "Login Successfull",
     };
   } catch (error) {

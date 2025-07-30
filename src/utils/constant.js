@@ -1,3 +1,4 @@
+import { Bell, Binoculars, Eye, Settings, UserRound } from "lucide-react";
 import { AUTH_SLIDER_1, AUTH_SLIDER_2 } from "./assetImages";
 
 export const BASE_URL = process.env.API_BASE_URL;
@@ -40,3 +41,32 @@ export const USER_PROFILE_NAVIGATION = [
     { label: "My Movie", path: "/profile/my-movie" },
     { label: "My List", path: "/profile/my-list" }
 ]
+
+/* PROFILE DROPDOWN CONTENT */
+export const PROFILE_DROPDOWN_MENU_ITEM = [
+    {
+        key: "profile",
+        label: "Profile",
+        startContent: <UserRound size={20}/>,
+    },
+    {
+        key: "settings",
+        label: "My Settings",
+        startContent: <Settings size={20}/>,
+    },
+    {
+        key: "watchlist",
+        label: "Watchlist",
+        startContent: <Eye size={20}/>
+    },
+    {
+        key: "viewing_history",
+        label: "Viewing History",
+        startContent: <Binoculars size={20}/>
+    },
+    {
+        key: "subscription_details",
+        label: "Subscription Details",
+        startContent: <Bell size={20}/>
+    },
+];

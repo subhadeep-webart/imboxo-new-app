@@ -9,10 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroui/avatar": "^2.2.20",
+    "@heroui/button": "^2.2.24",
+    "@heroui/dropdown": "^2.3.24",
+    "@heroui/react": "^2.8.2",
+    "@heroui/system": "^2.4.20",
+    "@heroui/theme": "^2.4.20",
     "@hookform/resolvers": "^5.1.1",
     "axios": "^1.10.0",
     "date-fns": "^4.1.0",
-    "framer-motion": "^12.23.6",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.534.0",
     "next": "15.4.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
