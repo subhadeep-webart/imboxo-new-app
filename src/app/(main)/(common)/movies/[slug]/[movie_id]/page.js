@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import CommonBanner from "@/components/common/CommonBanner";
 import MovieHeader from "@/components/movies/MovieHeader";
 import MovieListContainer from "@/components/movies/MovieListContainer";
