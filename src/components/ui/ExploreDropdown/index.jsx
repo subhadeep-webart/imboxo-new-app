@@ -31,6 +31,9 @@ const ExploreDropdown = ({ genreLists }) => {
                     aria-label="Explore Movies"
                     className="bg-[#201C28] !px-4 !py-2 !rounded-lg w-2xl max-h-[596px]"
                     classNames={{ list: "grid grid-cols-3 gap-4" }}
+                    itemClasses={{
+                        base: "!bg-transparent hover:!bg-transparent !text-[#9D9D9D] hover:!text-[#9875F6] !font-semibold hover:!font-bold !py-1 !px-2 whitespace-nowrap !transition-all"
+                    }}
                 >
                     <DropdownSection
                         title="All Genres"
@@ -41,16 +44,20 @@ const ExploreDropdown = ({ genreLists }) => {
                             group: "space-y-1",
                             divider: "my-2 border-t border-gray-200"
                         }}
-                    ></DropdownSection>
+                    />
+
                     {genreLists.map((genre) => (
-                        <DropdownItem
-                            className="text-[#9D9D9D] !py-2 !px-2 whitespace-nowrap !hover:text-[#9875F6] !hover:font-bold transition-all"
-                            key={genre.id}
-                        >
-                            <Link href={`/movies/${encodeURIComponent(genre.genre)}/${genre.id}`}>{genre?.genre}</Link>
+                        <DropdownItem key={genre.id} className="group">
+                            <Link
+                                href={`/movies/${encodeURIComponent(genre.genre)}/${genre.id}`}
+                                className="block w-full"
+                            >
+                                {genre?.genre}
+                            </Link>
                         </DropdownItem>
                     ))}
                 </DropdownMenu>
+
             </Dropdown>
         </div>
     )
