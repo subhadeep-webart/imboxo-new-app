@@ -19,7 +19,8 @@ const MovieDetails = async ({ params }) => {
     console.log("===============12", JSON.stringify(movieDetails, null, 2));
     return (
         <section>
-            <CommonBanner backgroundImage={movieDetails?.data?.thumbnail} />
+            { }
+            <MovieBanner streamingUrl={myVideo}/>
             <div className="container">
                 <MovieDetailsSection movieDetails={movieDetails?.data || {}} />
             </div>
