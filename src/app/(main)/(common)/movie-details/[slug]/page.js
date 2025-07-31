@@ -13,7 +13,8 @@ const MovieDetails = async ({ params }) => {
     let movieVideo = {};
     if (slug) {
         movieDetails = await getMoviesBySlug(slug);
-        movieVideo = await getFetchMovieFromS3({ type: "trailer", id: movieDetails?.data.id })
+        movieVideo = await getFetchMovieFromS3({ type: "trailer", id: movieDetails?.data.id });
+        console.log("======>my video",movieVideo);
     }
 
     console.log("===============12", JSON.stringify(movieDetails, null, 2));
