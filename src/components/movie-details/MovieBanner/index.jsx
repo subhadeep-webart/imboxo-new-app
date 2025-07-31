@@ -1,6 +1,7 @@
 "use client"
 import { useRef, useEffect } from "react";
 import videojs from "video.js";
+
 const MovieBanner = ({ streamingUrl }) => {
     const videoRef = useRef(null);
     const player = useRef(null);
