@@ -9,12 +9,13 @@ const ProfileInfo = ({ profileNavMenu, name, userName, profile_img }) => {
           src={profile_img ? profile_img : "/assets/images/fallback.png"}
           fill
           className="object-cover"
+          alt={`${name}-image`}
         />
       </div>
       <div className={styles.profile_name}>
         <div>
           <p className={styles.profile_name_text}>{name}</p>
-          <p className="text-[#9D9D9D]">@{userName}</p>
+          <p className="text-[#9D9D9D] my-1">{userName && `@ ${userName}`}</p>
         </div>
         <div className={styles.profile_navigation}>
           {profileNavMenu.map((profileNav, index) => (

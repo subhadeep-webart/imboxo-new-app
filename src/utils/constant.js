@@ -33,7 +33,7 @@ export const CREATOR_PROFILE_NAVIGATION = [
     { label: "Dashboard", path: "#" },
     { label: "My Movie", path: "#" },
     { label: "Upload Movie", path: "#" },
-    { label: "Awards", path: "/profile/awards" }
+    { label: "Awards", path: "#" }
 ]
 /* USER PROFILE NAVIGATION */
 export const USER_PROFILE_NAVIGATION = [

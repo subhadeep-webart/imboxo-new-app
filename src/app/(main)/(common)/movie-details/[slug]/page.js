@@ -1,5 +1,4 @@
 import CommonBanner from "@/components/common/CommonBanner";
-import MovieBanner from "@/components/movie-details/MovieBanner";
 import MovieDetailsSection from "@/components/movie-details/MovieDetailsSection";
 import MovieScenes from "@/components/movie-details/MovieScenes";
 import RecomendedMovie from "@/components/movie-details/RecomendedMovie";
@@ -14,14 +13,15 @@ const MovieDetails = async ({ params }) => {
     if (slug) {
         movieDetails = await getMoviesBySlug(slug);
         movieVideo = await getFetchMovieFromS3({ type: "trailer", id: movieDetails?.data.id });
-        console.log("======>my video",movieVideo);
+        console.log("======>my video", movieVideo);
     }
 
     console.log("===============12", JSON.stringify(movieDetails, null, 2));
-    console.log("djjjdjj======>",movieVideo);
+    console.log("djjjdjj======>", movieVideo);
     return (
         <section>
-            <MovieBanner streamingUrl={movieVideo?.fileUrl}/>
+            <CommonBanner backgroundImage={movieDetails?.data?.thumbnail} />
+            {/* <MovieBanner streamingUrl={movieVideo?.fileUrl}/> */}
             <div className="container">
                 <MovieDetailsSection movieDetails={movieDetails?.data || {}} />
             </div>

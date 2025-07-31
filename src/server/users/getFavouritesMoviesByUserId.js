@@ -19,7 +19,7 @@ export const getFavouritesMoviesByUserId = async () => {
             // redirect("/login");
         }
 
-        const response = await axiosInstance.post(`${API_ENDPOINTS.GET_FAVOURITE_MOVIES_BY_USER_ID}/${user_id}`, {
+        const response = await axiosInstance.post(`${API_ENDPOINTS.GET_FAVOURITE_MOVIES_BY_USER_ID}/${user_id}`, { user_id }, {
             skipAuth: false,
         });
 

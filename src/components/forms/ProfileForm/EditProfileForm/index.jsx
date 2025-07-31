@@ -9,10 +9,10 @@ import styles from "../../form.module.scss";
 import Image from "next/image";
 import useUserDetailsUpdate from "@/hooks/useUserDetailsUpdate";
 import Loader from "@/components/ui/Loader";
+import { CheckCircle } from "lucide-react";
 
 const EditProfileForm = ({ countryLists, userDetails }) => {
   const { handleUpdateUserDetails, isLoading } = useUserDetailsUpdate();
-  console.log("User Details=======>", userDetails);
 
   const {
     register,
@@ -20,6 +20,7 @@ const EditProfileForm = ({ countryLists, userDetails }) => {
     watch,
     reset,
     formState: { errors },
+    setValue,
   } = useForm({
     defaultValues: {
       name: userDetails?.name || "",
@@ -33,7 +34,7 @@ const EditProfileForm = ({ countryLists, userDetails }) => {
     },
   });
 
-  // Reset form values when userDetails changes
+  // Reset when userDetails changes
   useEffect(() => {
     if (userDetails) {
       reset({
@@ -67,6 +68,22 @@ const EditProfileForm = ({ countryLists, userDetails }) => {
     });
     await handleUpdateUserDetails(formData, reset);
   };
+
+  useEffect(() => {
+    if (states.length && userDetails?.state) {
+      setValue("state", userDetails.state);
+    }
+  }, [userDetails?.state, setValue, states]);
+
+  useEffect(() => {
+    if (cities.length && userDetails?.city) {
+      setValue("city", userDetails.city);
+    }
+  }, [userDetails?.city, setValue, cities]);
+
+  // Watch file inputs
+  const profileImgFile = watch("profile_img");
+  const bannerImgFile = watch("banner_img");
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
@@ -114,17 +131,24 @@ const EditProfileForm = ({ countryLists, userDetails }) => {
           <div className={styles.passwordWrapper}>
             <input type="file" className={styles.input} {...register("profile_img")} />
             <span className={styles.toggle}>
-              <Image src={UPLOAD_ICON.src} alt="Upload" width={16} height={16} />
+              {profileImgFile && profileImgFile[0] ? (
+                <CheckCircle className="text-green-500" size={18} />
+              ) : (
+                <Image src={UPLOAD_ICON.src} alt="Upload" width={16} height={16} />
+              )}
             </span>
           </div>
         </div>
-
         <div className="w-full relative">
           <label className={styles.label}>Upload Cover Image</label>
           <div className={styles.passwordWrapper}>
             <input type="file" className={styles.input} {...register("banner_img")} />
             <span className={styles.toggle}>
-              <Image src={UPLOAD_ICON.src} alt="Upload" width={16} height={16} />
+              {bannerImgFile && bannerImgFile[0] ? (
+                <CheckCircle className="text-green-500" size={18} />
+              ) : (
+                <Image src={UPLOAD_ICON.src} alt="Upload" width={16} height={16} />
+              )}
             </span>
           </div>
         </div>
@@ -191,7 +215,9 @@ const EditProfileForm = ({ countryLists, userDetails }) => {
               ))}
             </select>
             <span className="absolute inset-y-0 right-3 flex items-center">
-              <Image src={DOWN_ARROW_ICON.src} height={15} width={15} alt="Arrow" />
+              {cityLoading ? "Loading..." : (
+                <Image src={DOWN_ARROW_ICON.src} height={15} width={15} alt="Arrow" />
+              )}
             </span>
           </div>
           {errors.city && <p className={styles.error}>{errors.city.message}</p>}

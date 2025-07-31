@@ -5,15 +5,15 @@ import SubscriptionSection from "@/components/profile/MyMoviesComponent/Subscrip
 const MyMovies = async () => {
     const userMovieList = await getMovieListByUserId();
     const pay_per_view = userMovieList?.pay_per_view || [];
-    const by_movies = userMovieList?.buy || [];
+    const buy_movies = userMovieList?.buy || [];
     console.log("User  Movie List=====>", userMovieList);
     return (
         <section className="profile_page_container">
             <div className={styles.profile_page_wrapper}>
                 <div className={styles.my_movie_contianer}>
-                    <MyMovieContainer movieSectionHeader={"Purchased Movies"} />
-                    <MyMovieContainer movieSectionHeader={"Rented Movies"} />
-                    <SubscriptionSection/>
+                    <MyMovieContainer movieSectionHeader={"Purchased Movies"} movieLists={pay_per_view} />
+                    <MyMovieContainer movieSectionHeader={"Rented Movies"} movieLists={buy_movies} />
+                    <SubscriptionSection />
                 </div>
             </div>
         </section>
