@@ -19,7 +19,7 @@ const MovieDetails = async ({ params }) => {
     console.log("===============12", JSON.stringify(movieDetails, null, 2));
     return (
         <section>
-            <MovieBanner streamingUrl={myVideo}/>
+            <MovieBanner streamingUrl={movieVideo}/>
             <div className="container">
                 <MovieDetailsSection movieDetails={movieDetails?.data || {}} />
             </div>
