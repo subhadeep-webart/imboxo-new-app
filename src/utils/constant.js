@@ -33,13 +33,13 @@ export const CREATOR_PROFILE_NAVIGATION = [
     { label: "Dashboard", path: "#" },
     { label: "My Movie", path: "#" },
     { label: "Upload Movie", path: "#" },
-    { label: "Awards", path: "#" }
+    { label: "Awards", path: "/profile/awards" }
 ]
 /* USER PROFILE NAVIGATION */
 export const USER_PROFILE_NAVIGATION = [
     { label: "Edit Profile", path: "/profile" },
-    { label: "My Movie", path: "#" },
-    { label: "My List", path: "#" }
+    { label: "My Movies", path: "/profile/my-movies" },
+    { label: "My List", path: "/profile/my-list" }
 ]
 
 /* PROFILE DROPDOWN CONTENT */
@@ -75,3 +75,8 @@ export const PROFILE_DROPDOWN_MENU_ITEM = [
         link:"#"
     },
 ];
+
+/* AWARDS TABLE HEADER */
+const AWARD_TABLE_HEADER=[
+
+]
