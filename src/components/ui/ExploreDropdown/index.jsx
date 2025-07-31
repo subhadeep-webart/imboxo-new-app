@@ -1,0 +1,59 @@
+"use client"
+
+import { useState } from "react";
+import {
+    Dropdown,
+    DropdownTrigger,
+    DropdownMenu,
+    DropdownItem,
+    DropdownSection,
+} from "@heroui/react";
+
+import Link from "next/link";
+
+const ExploreDropdown = ({ genreLists }) => {
+    const [isExploreDropdownOpen, setIsExploreDropdownOpen] = useState(false);
+    return (
+        <div onMouseEnter={() => setIsExploreDropdownOpen(true)}
+            onMouseLeave={() => setIsExploreDropdownOpen(false)} className="!p-0 !m-0">
+            <Dropdown
+                isOpen={isExploreDropdownOpen}
+                onOpenChange={setIsExploreDropdownOpen}
+                className="!p-0"
+            >
+                <DropdownTrigger>
+                    <Link className="" href="/movies">
+                        Explore
+                    </Link>
+                </DropdownTrigger>
+
+                <DropdownMenu
+                    aria-label="Explore Movies"
+                    className="bg-[#201C28] !px-4 !py-2 !rounded-lg w-2xl max-h-[596px]"
+                    classNames={{ list: "grid grid-cols-3 gap-4" }}
+                >
+                    <DropdownSection
+                        title="All Genres"
+                        className="col-span-3 !my-2 !px-2"
+                        classNames={{
+                            base: "px-4 py-4",
+                            heading: "text-xl font-bold text-white",
+                            group: "space-y-1",
+                            divider: "my-2 border-t border-gray-200"
+                        }}
+                    ></DropdownSection>
+                    {genreLists.map((genre) => (
+                        <DropdownItem
+                            className="text-[#9D9D9D] !py-2 !px-2 whitespace-nowrap !hover:text-[#9875F6] !hover:font-bold transition-all"
+                            key={genre.id}
+                        >
+                            <Link href={`/movies/${encodeURIComponent(genre.genre)}/${genre.id}`}>{genre?.genre}</Link>
+                        </DropdownItem>
+                    ))}
+                </DropdownMenu>
+            </Dropdown>
+        </div>
+    )
+}
+
+export default ExploreDropdown;

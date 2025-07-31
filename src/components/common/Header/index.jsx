@@ -3,9 +3,14 @@ import { COMMON_HEADER_NAV_ITEMS } from "@/utils/constant";
 import Image from "next/image";
 import Link from "next/link";
 import NavbarRight from "./NavbarRight";
-const Header = async() => {
-    const userDetails=await getUserDetailsById();
-    const {profile_img}=userDetails;
+import ExploreDropdown from "@/components/ui/ExploreDropdown";
+import { getAllGenres } from "@/server/movies/getAllGenres";
+const Header = async () => {
+    const userDetails = await getUserDetailsById();
+    const { profile_img } = userDetails;
+    const genreList=await getAllGenres();
+
+    console.log("All Genre List",genreList);
     return (
         <div className="container">
             <nav className="navbar">
@@ -17,13 +22,21 @@ const Header = async() => {
                     </Link>
                     <ul className="navbar__menu">
                         {
-                            COMMON_HEADER_NAV_ITEMS.map((navItem, index) => (<Link href={navItem.path} key={`nav-item-${index + 1}`}>
-                                <li>{navItem.label}</li>
-                            </Link>))
+                            COMMON_HEADER_NAV_ITEMS.map((navItem, index) =>
+                                navItem.label === "Explore" ? (
+                                    <li key={`nav-item-${index + 1}`}>
+                                        <ExploreDropdown genreLists={genreList}/>
+                                    </li>
+                                ) : (
+                                    <li key={`nav-item-${index + 1}`}>
+                                        <Link href={navItem.path}>{navItem.label}</Link>
+                                    </li>
+                                )
+                            )
                         }
                     </ul>
                 </div>
-                <NavbarRight profile_img={profile_img}/>
+                <NavbarRight profile_img={profile_img} />
             </nav>
         </div>
     )
