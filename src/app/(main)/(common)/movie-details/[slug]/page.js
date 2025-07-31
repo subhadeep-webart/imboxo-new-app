@@ -21,7 +21,7 @@ const MovieDetails = async ({ params }) => {
     console.log("djjjdjj======>",movieVideo);
     return (
         <section>
-            <MovieBanner streamingUrl={movieVideo}/>
+            <MovieBanner streamingUrl={movieVideo?.fileUrl}/>
             <div className="container">
                 <MovieDetailsSection movieDetails={movieDetails?.data || {}} />
             </div>
