@@ -2,8 +2,13 @@
 import { EYE_ICON } from "@/utils/icons"
 import Image from "next/image"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Navigation } from "swiper/modules"
+import { Autoplay, Mousewheel, Navigation } from "swiper/modules"
+import { useRef } from "react"
+import { usePreventWindowScroll } from "@/hooks/usePreventWindowScroll"
 const TrendingReels = () => {
+    const swiperContainerRef=useRef(null);
+
+    usePreventWindowScroll(swiperContainerRef);
     return (
         <section className="trending-reels-section">
             <div className="container">
@@ -16,14 +21,15 @@ const TrendingReels = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full">
-                <Swiper modules={[Autoplay,Navigation]}
+            <div className="w-full" ref={swiperContainerRef}>
+                <Swiper modules={[Autoplay,Navigation,Mousewheel]}
                     spaceBetween={30}
                     slidesPerView={6}
                     slidesPerGroup={6}
                     loop={true}
                     autoplay={{ delay: 4000, disableOnInteraction: true, pauseOnMouseEnter: true }}
                     speed={3000}
+                    mousewheel={true}
                     navigation={true}
                     className="reels-wrapper">
                     <SwiperSlide className="each-reel">

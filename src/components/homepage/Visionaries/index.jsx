@@ -2,16 +2,16 @@
 import { useRef, useState } from "react";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Mousewheel, Navigation } from "swiper/modules";
 
 const Visionaries = () => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-
+    const swiperContainerRef=useRef(null);
     return (
         <section className="visionaries-section">
             <div className="container">
-                <div className="section-content">
+                <div className="section-content" ref={swiperContainerRef}>
                     <div className="section-header">
                         <h2 className="section-title">
                             <strong>The Visionaries</strong> Behind the Film
@@ -36,7 +36,7 @@ const Visionaries = () => {
                         </div>
                     </div>
                     <Swiper
-                        modules={[Navigation]}
+                        modules={[Navigation,Mousewheel]}
                         spaceBetween={30}
                         slidesPerView={5}
                         navigation={{
@@ -49,6 +49,7 @@ const Visionaries = () => {
                         }}
                         loop={true}
                         autoplay={true}
+                        mousewheel={true}
                         className="visionaries-wrapper"
                         style={{ paddingTop: "80px !important",height:"410px !important"}}
                     >

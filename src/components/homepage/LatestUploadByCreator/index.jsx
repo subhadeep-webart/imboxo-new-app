@@ -1,13 +1,16 @@
 "use client"
+import { useEffect, useRef } from "react";
 import MovieCard from "@/components/ui/card/MovieCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import { useRef } from "react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Mousewheel, Navigation } from "swiper/modules";
+import "swiper/css/mousewheel";
+import { usePreventWindowScroll } from "@/hooks/usePreventWindowScroll";
 
 const LatestUploadByCreator = ({ movieData }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
+    const swiperContainerRef = useRef(null);
 
     // --- ✅ Adjust movieData length for full groups ---
     const totalSlides = movieData?.length || 0;
@@ -18,11 +21,13 @@ const LatestUploadByCreator = ({ movieData }) => {
         ...movieData,
         ...movieData.slice(0, slidesToAdd) // clone first few to fill last group
     ];
+     
+    usePreventWindowScroll(swiperContainerRef);
 
     return (
         <section className="latest-section">
             <div className="container">
-                <div className="section-content !flex">
+                <div className="section-content !flex" ref={swiperContainerRef}>
                     <div className="section-info">
                         <h2 className="section-title">
                             <strong>Latest</strong> Uploaded by Creators
@@ -51,13 +56,15 @@ const LatestUploadByCreator = ({ movieData }) => {
                     </div>
 
                     <Swiper
-                        modules={[Navigation, Autoplay]}
+                        modules={[Navigation, Autoplay, Mousewheel]}
+                        mousewheel={true}
+                        direction="horizontal"
                         slidesPerGroup={3}
                         slidesPerView={3}
                         speed={3000}
                         autoplay={{
                             delay: 2000,
-                            disableOnInteraction: false,
+                            disableOnInteraction: true,
                         }}
                         navigation={{
                             prevEl: prevRef.current,
@@ -67,6 +74,11 @@ const LatestUploadByCreator = ({ movieData }) => {
                             swiper.params.navigation.prevEl = prevRef.current;
                             swiper.params.navigation.nextEl = nextRef.current;
                         }}
+                        // mousewheel={{
+                        //     forceToAxis: true,
+                        //     sensitivity: 1,
+                        //     releaseOnEdges: true,
+                        // }}
                         className="latest-movies-wrapper"
                         style={{ paddingLeft: "20px" }}
                         loop={true}

@@ -1,10 +1,15 @@
 "use client"
-import { Autoplay, Navigation } from "swiper/modules"
+import { Autoplay, Mousewheel, Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import Image from "next/image";
+import { useRef } from "react";
+import { usePreventWindowScroll } from "@/hooks/usePreventWindowScroll";
 
 const CapturedSection = () => {
+    const swiperContainerRef=useRef(null);
+
+    usePreventWindowScroll(swiperContainerRef);
     return (
         <section className="captured-section">
             <div className="container">
@@ -17,15 +22,16 @@ const CapturedSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-full">
+            <div className="w-full" ref={swiperContainerRef}>
                 <Swiper
-                    modules={[Autoplay, Navigation]}
+                    modules={[Autoplay, Navigation,Mousewheel]}
                     spaceBetween={24}
                     slidesPerGroup={6}
                     slidesPerView={6}
                     loop={true}
                     speed={2000}
-                    // autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
+                    mousewheel={true}
+                    autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
                     className="logo-wrapper"
                     navigation={true}
                 >
