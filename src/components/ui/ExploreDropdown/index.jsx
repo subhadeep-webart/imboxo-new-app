@@ -57,7 +57,6 @@ const ExploreDropdown = ({ genreLists }) => {
                         </DropdownItem>
                     ))}
                 </DropdownMenu>
-
             </Dropdown>
         </div>
     )
