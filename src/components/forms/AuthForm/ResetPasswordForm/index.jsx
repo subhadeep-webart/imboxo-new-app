@@ -12,6 +12,7 @@ import useResetPasswordHandler from "@/hooks/useResetPasswordHandler";
 
 const ResetPasswordForm = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const { handleResetPassword, isLoading } = useResetPasswordHandler();
     const {
         register,
@@ -25,7 +26,7 @@ const ResetPasswordForm = () => {
     const onSubmit = async (data) => {
         const email = sessionStorage.getItem("emailForOTP");
         const payloadData = { ...data, email }
-        await handleResetPassword(payloadData,reset);
+        await handleResetPassword(payloadData, reset);
     }
     return (
         <form className={Styles.otp_form} onSubmit={handleSubmit(onSubmit)}>
@@ -52,14 +53,14 @@ const ResetPasswordForm = () => {
                 <label className={Styles.label}>Confirm Password</label>
                 <div className={Styles.passwordWrapper}>
                     <input
-                        type={showPassword ? "text" : "password"}
+                        type={showConfirmPassword ? "text" : "password"}
                         placeholder="Enter Password"
                         className={Styles.input}
                         {...register("confirm_password")}
                     />
                     <span
                         className={Styles.toggle}
-                        onClick={() => setShowPassword((prev) => !prev)}
+                        onClick={() => setShowConfirmPassword((prev) => !prev)}
                     >
                         <Image src={PASSWORD_EYE_ICON.src} alt="Toggle" width={16} height={16} />
                     </span>

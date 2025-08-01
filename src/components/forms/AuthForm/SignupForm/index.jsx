@@ -11,9 +11,10 @@ import Link from "next/link";
 import Loader from "@/components/ui/Loader";
 import useSignupHandler from "@/hooks/useSignupHandler";
 
-export default function SignupForm({role}) {
-    const {handleSignup,isLoading}=useSignupHandler();
+export default function SignupForm({ role }) {
+    const { handleSignup, isLoading } = useSignupHandler();
     const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const {
         register,
@@ -24,8 +25,8 @@ export default function SignupForm({role}) {
         resolver: yupResolver(signUpFormValidationSchema),
     });
 
-    const onSubmit = async(data) => {
-       await handleSignup({role,...data},reset);
+    const onSubmit = async (data) => {
+        await handleSignup({ role, ...data }, reset);
     };
 
     return (
@@ -73,14 +74,14 @@ export default function SignupForm({role}) {
                 <label className={styles.label}>Confirm Password</label>
                 <div className={styles.passwordWrapper}>
                     <input
-                        type={showPassword ? "text" : "password"}
+                        type={showConfirmPassword ? "text" : "password"}
                         placeholder="Enter Password"
                         className={styles.input}
                         {...register("confirmPassword")}
                     />
                     <span
                         className={styles.toggle}
-                        onClick={() => setShowPassword((prev) => !prev)}
+                        onClick={() => setShowConfirmPassword((prev) => !prev)}
                     >
                         <Image src={PASSWORD_EYE_ICON.src} alt="Toggle" width={16} height={16} />
                     </span>

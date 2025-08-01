@@ -12,7 +12,7 @@ const CreatorSignUp = () => {
                         <MovieSlider/>
                     </div>
                     <div className={Styles.form_wrapper}>
-                        <SignupForm role={0}/>
+                        <SignupForm role={1}/>
                     </div>
                 </div>
             </div>
