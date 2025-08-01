@@ -17,6 +17,10 @@ export const API_ENDPOINTS = {
   GET_STATE_BY_COUNTRY_ID: "/state",
   GET_CITY_BY_STATE_ID: "/city",
   GET_AWARDS_BY_USER_ID: "/award-list",
-  GET_MOVIES_BY_USER_ID:"/get-pay-per-view-and-buy",
-  GET_FAVOURITE_MOVIES_BY_USER_ID:"/list-favorite-movie"
+  GET_MOVIES_BY_USER_ID: "/get-pay-per-view-and-buy",
+  GET_FAVOURITE_MOVIES_BY_USER_ID: "/list-favorite-movie",
+  GET_ALL_QUALITY: "/quality",
+  GET_ALL_CASTS: "/cast",
+  GET_ALL_CREW: "/crew",
+  GET_ALL_LANGUAGES: "/language"
 };

@@ -2,10 +2,11 @@ import Image from "next/image";
 import styles from "./moviedetails.module.scss";
 import { WISHLIST_ICON } from "@/utils/icons";
 import { formatDate } from "@/utils/helper";
+import CastCard from "./CastCard";
 
 const MovieDetailsSection = ({ movieDetails }) => {
-    const { name, poster, description, genre = [], director, release_date, duration } = movieDetails;
-    console.log("Movie Details====12", genre);
+    const { name, poster, description, genre = [], director, release_date, duration, cast, crew } = movieDetails;
+    const allCastAndCrew = [...cast, ...crew];
     return (
         <section className={styles.movie_details_wrapper}>
             <div className={styles.movie_image_container}>
@@ -13,6 +14,8 @@ const MovieDetailsSection = ({ movieDetails }) => {
                     src={poster}
                     fill
                     alt={`${name}-image`}
+                    quality={75}
+                    // placeholder="blur"
                     className="object-cover rounded-md"
                 />
             </div>
@@ -50,8 +53,8 @@ const MovieDetailsSection = ({ movieDetails }) => {
                             <p className={styles.paragraph_text}>{director}</p>
                         </div>
                         <div>
-                            <p className="text-purple">Creator</p>
-                            <p className={styles.paragraph_text}>Christopher Nolan</p>
+                            <p className="text-purple">Writer</p>
+                            <p className={styles.paragraph_text}></p>
                         </div>
                     </div>
                     <div className="w-[20%] flex justify-end items-center">
@@ -65,7 +68,10 @@ const MovieDetailsSection = ({ movieDetails }) => {
                     </p>
                 </div>
                 <div className={styles.cast_wrapper}>
-                    <div className={styles.each_cast}>
+                    {
+                        allCastAndCrew.map((castAndCrew) => (<CastCard imageUrl={castAndCrew?.image} name={castAndCrew?.name} />))
+                    }
+                    {/* <div className={styles.each_cast}>
                         <div className={styles.cast_thumb}>
                             <Image src="/assets/images/visionary-1.png" alt="" fill />
                         </div>
@@ -91,7 +97,7 @@ const MovieDetailsSection = ({ movieDetails }) => {
                     </div>
                     <div className={styles.cast_view_more}>
                         <p className="text-[#9875F6] text-xs text-center">View Cast & Crew</p>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
