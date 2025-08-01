@@ -69,6 +69,21 @@ const EditProfileForm = ({ countryLists, userDetails }) => {
     await handleUpdateUserDetails(formData, reset);
   };
 
+  // ✅ Reset state & city if country changes
+  useEffect(() => {
+    if (selectedCountry && selectedCountry != userDetails?.country) {
+      setValue("state", "");
+      setValue("city", "");
+    }
+  }, [selectedCountry, setValue, userDetails?.country]);
+
+  // ✅ Reset city if state changes
+  useEffect(() => {
+    if (selectedState && selectedState != userDetails?.state) {
+      setValue("city", "");
+    }
+  }, [selectedState, setValue, userDetails?.state]);
+
   useEffect(() => {
     if (states.length && userDetails?.state) {
       setValue("state", userDetails.state);
