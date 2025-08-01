@@ -2,14 +2,14 @@ import MovieCard from "@/components/ui/card/MovieCard";
 import styles from "./mymovies.module.scss";
 
 const MyMovieContainer = ({ movieSectionHeader, movieLists }) => {
+    console.log("khalibali=====>",movieLists);
     return (
         <div>
             <div className={styles.section_padding}>
                 <p className={styles.heading}>{movieSectionHeader}</p>
             </div>
-
             {movieLists && movieLists.length > 0 ? (
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                     {movieLists.map((movieData, index) => (
                         <MovieCard
                             movieData={movieData}

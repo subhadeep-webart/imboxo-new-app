@@ -9,6 +9,8 @@ import {
     DropdownSection,
 } from "@heroui/react";
 
+import { ChevronUp,ChevronDown } from "lucide-react";
+
 import Link from "next/link";
 
 const ExploreDropdown = ({ genreLists }) => {
@@ -22,9 +24,17 @@ const ExploreDropdown = ({ genreLists }) => {
                 className="!p-0"
             >
                 <DropdownTrigger>
-                    <Link className="" href="/movies">
+                    {/* <Link className="" href="/movies">
                         Explore
-                    </Link>
+                    </Link> */}
+                    <button className="flex items-center gap-1">
+                        <Link href="/movies">Explore</Link>
+                        {isExploreDropdownOpen ? (
+                            <ChevronUp className="w-4 h-4 text-[#9875F6] transition-transform duration-200" />
+                        ) : (
+                            <ChevronDown className="w-4 h-4 text-white transition-transform duration-200" />
+                        )}
+                    </button>
                 </DropdownTrigger>
 
                 <DropdownMenu

@@ -23,7 +23,7 @@ const MovieCard = ({ movieData }) => {
                                 />
                                 <span>8.8</span>
                             </div>
-                            <span className="year">{formatDate(release_date)}</span>
+                            {release_date && <span className="year">{formatDate(release_date)}</span>}
                             <span className="duration">{duration}</span>
                         </div>
                     </div>
