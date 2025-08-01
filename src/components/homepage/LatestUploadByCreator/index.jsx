@@ -1,9 +1,9 @@
 "use client"
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import MovieCard from "@/components/ui/card/MovieCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
-import { Autoplay, Mousewheel, Navigation } from "swiper/modules";
+import { Mousewheel, Navigation } from "swiper/modules";
 import "swiper/css/mousewheel";
 import { usePreventWindowScroll } from "@/hooks/usePreventWindowScroll";
 
@@ -27,7 +27,7 @@ const LatestUploadByCreator = ({ movieData }) => {
     return (
         <section className="latest-section">
             <div className="container">
-                <div className="section-content !flex" ref={swiperContainerRef}>
+                <div className="section-content !flex">
                     <div className="section-info">
                         <h2 className="section-title">
                             <strong>Latest</strong> Uploaded by Creators
@@ -56,16 +56,12 @@ const LatestUploadByCreator = ({ movieData }) => {
                     </div>
 
                     <Swiper
-                        modules={[Navigation, Autoplay, Mousewheel]}
+                        modules={[Navigation,Mousewheel]}
                         mousewheel={true}
                         direction="horizontal"
                         slidesPerGroup={3}
                         slidesPerView={3}
-                        speed={3000}
-                        autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: true,
-                        }}
+                        speed={2000}
                         navigation={{
                             prevEl: prevRef.current,
                             nextEl: nextRef.current,
@@ -82,6 +78,7 @@ const LatestUploadByCreator = ({ movieData }) => {
                         className="latest-movies-wrapper"
                         style={{ paddingLeft: "20px" }}
                         loop={true}
+                        ref={swiperContainerRef}
                     >
                         {finalSlides.map((movie, index) => (
                             <SwiperSlide key={`latest-upload-movie-${index}`} className="each-movie">

@@ -7,11 +7,11 @@ import { Mousewheel, Navigation } from "swiper/modules";
 const Visionaries = () => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
-    const swiperContainerRef=useRef(null);
+    const swiperContainerRef = useRef(null);
     return (
         <section className="visionaries-section">
             <div className="container">
-                <div className="section-content" ref={swiperContainerRef}>
+                <div className="section-content">
                     <div className="section-header">
                         <h2 className="section-title">
                             <strong>The Visionaries</strong> Behind the Film
@@ -36,7 +36,7 @@ const Visionaries = () => {
                         </div>
                     </div>
                     <Swiper
-                        modules={[Navigation,Mousewheel]}
+                        modules={[Navigation, Mousewheel]}
                         spaceBetween={30}
                         slidesPerView={5}
                         navigation={{
@@ -51,7 +51,8 @@ const Visionaries = () => {
                         autoplay={true}
                         mousewheel={true}
                         className="visionaries-wrapper"
-                        style={{ paddingTop: "80px !important",height:"410px !important"}}
+                        style={{ paddingTop: "80px !important", height: "410px !important" }}
+                        ref={swiperContainerRef}
                     >
                         <SwiperSlide>
                             <div className={`each-visionary visionary-bigger`} >

@@ -1,18 +1,14 @@
 export const dynamic = "force-dynamic";
 
-import { getMovies } from "@/server/movies/getMovies";
 import { getMovieByCategory } from "@/server/movies/getMovieByCategory";
 import TopMoviesOfWeek from "@/components/homepage/TopMoviesOfWeek";
 import HomeBanner from "@/components/homepage/HomeBanner";
-import LifeUfiction from "@/components/homepage/LifeUfiction";
 import LatestUploadByCreator from "@/components/homepage/LatestUploadByCreator";
 import CapturedSection from "@/components/homepage/CapturedSection";
 import TrendingReels from "@/components/homepage/TrendingReels";
-import HboMovie from "@/components/homepage/HboMovie";
 import MovieViewerSection from "@/components/homepage/MovieViewerSection";
 import Visionaries from "@/components/homepage/Visionaries";
 import EachMovieSection from "@/components/homepage/EachMovieSection";
-import AnimatedSection from "@/components/common/AnimatedSection";
 
 const Home = async () => {
   const movieByCategories = await getMovieByCategory();

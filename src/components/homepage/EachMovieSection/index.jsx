@@ -39,7 +39,7 @@ const EachMovieSection = ({ movieCategoryName, movieListData }) => {
                 autoplay={{ delay: 2000, disableOnInteraction: true, pauseOnMouseEnter: true }}
                 className="latest-movies-wrapper" ref={swiperContainerRef}>
                 {
-                    finalSlides?.map((movie) => (<SwiperSlide key={movie?.id}>
+                    finalSlides?.map((movie) => (<SwiperSlide key={crypto.randomUUID()}>
                         <MovieCard movieData={movie} />
                     </SwiperSlide>))
                 }
